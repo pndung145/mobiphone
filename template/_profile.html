@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <script src="/__prepros.js"></script>
+    <meta charset="UTF-8">
+    <title>SimPay - Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!--CSS-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.6/dist/css/uikit.min.css"/>
+    <link rel="stylesheet" href="style.css?v=1635572784">
+    <!--JS-->
+    <script src="https://cdn.jsdelivr.net/npm/@shinsenter/defer.js/dist/defer_plus.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.6/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.6/dist/js/uikit-icons.min.js"></script>
+    <script src="assets/placeholderTypewriter.js"></script>
+
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+
+    <script src="js/app.js"></script>
+</head>
+<body class="">
+<!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<!-- Your customer chat code -->
+<div class="fb-customerchat"
+     attribution=setup_tool
+     page_id="2428809380682169"
+     logged_in_greeting="Bạn cần cắt HTML/CSS? Hãy chat ngay với chúng tôi"
+     logged_out_greeting="Bạn cần cắt HTML/CSS? Hãy chat ngay với chúng tôi">
+</div>
+<script>
+    defer(function () {
+        window.fbAsyncInit = function () {
+            FB.init({
+                xfbml: true,
+                version: 'v5.0'
+            });
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    }, 5000);
+</script>
+<div id="offcanvas-fillter" class="boloc__offcanvas" uk-offcanvas="flip: true; overlay: true">
+    <div class="uk-offcanvas-bar">
+        <button class="uk-offcanvas-close" type="button" uk-close></button>
+        <h3 class="uk-h3 boloc__title">Bộ lọc</h3>
+        <div class="uk-grid-24 uk-grid uk-child-width-1-1 uk-form-stacked" uk-grid>
+            <div>
+                <div class="uk-margin uk-grid-10 uk-child-width-1-1 uk-grid" uk-grid>
+                    <label><input class="uk-checkbox boloc__checkBox__check" type="checkbox" checked> <span
+                            class="boloc__checkBox__txt">Trả trước</span></label>
+                    <label><input class="uk-checkbox boloc__checkBox__check" type="checkbox"> <span
+                            class="boloc__checkBox__txt">Trả sau</span></label>
+                </div>
+            </div>
+            <div>
+                <label class="uk-form-label boloc__accordion__label" for="form-stacked-text">Giá tiền</label>
+                <div class="uk-form-controls">
+                    <div class="uk-grid-10 uk-flex-middle" uk-grid>
+                        <div class="uk-width-expand">
+                            <input class="uk-input boloc__inputRange" type="text" placeholder="" value="0">
+                        </div>
+                        <div class="uk-width-auto">
+                            <span>-</span>
+                        </div>
+                        <div class="uk-width-expand">
+                            <input class="uk-input boloc__inputRange" type="text" placeholder="" value="125">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <label class="uk-form-label boloc__accordion__label" for="form-stacked-text">Sim theo loại</label>
+                <div class="uk-form-controls">
+                    <div class="uk-width-1-1" uk-form-custom="target: > * > span:first-child">
+                        <select>
+                            <option value="">Sim Tứ quý</option>
+                            <option value="1">Mobifone</option>
+                            <option value="2">Vinaphone</option>
+                            <option value="3">Vietnammobile</option>
+                        </select>
+                        <button class="uk-button uk-button-default home__content__btnSort uk-width-1-1" type="button"
+                                tabindex="-1">
+                            <span></span>
+                            <span class="uk-icon uk-position-center-right"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <label class="uk-form-label boloc__accordion__label" for="form-stacked-text">Không bao gồm</label>
+                <div class="uk-form-controls">
+                    <div class="uk-grid-8 uk-child-width-auto uk-grid" uk-grid>
+                        <label class="boloc__notNumber">
+                            <input class="uk-checkbox boloc__notNumber__check" type="checkbox" checked>
+                            <span class="boloc__notNumber__txt">1</span>
+                        </label>
+                        <label class="boloc__notNumber">
+                            <input class="uk-checkbox boloc__notNumber__check" type="checkbox">
+                            <span class="boloc__notNumber__txt">2</span>
+                        </label>
+                        <label class="boloc__notNumber">
+                            <input class="uk-checkbox boloc__notNumber__check" type="checkbox">
+                            <span class="boloc__notNumber__txt">3</span>
+                        </label>
+                        <label class="boloc__notNumber">
+                            <input class="uk-checkbox boloc__notNumber__check" type="checkbox">
+                            <span class="boloc__notNumber__txt">4</span>
+                        </label>
+                        <label class="boloc__notNumber">
+                            <input class="uk-checkbox boloc__notNumber__check" type="checkbox">
+                            <span class="boloc__notNumber__txt">5</span>
+                        </label>
+                        <label class="boloc__notNumber">
+                            <input class="uk-checkbox boloc__notNumber__check" type="checkbox">
+                            <span class="boloc__notNumber__txt">6</span>
+                        </label>
+                        <label class="boloc__notNumber">
+                            <input class="uk-checkbox boloc__notNumber__check" type="checkbox">
+                            <span class="boloc__notNumber__txt">7</span>
+                        </label>
+                        <label class="boloc__notNumber">
+                            <input class="uk-checkbox boloc__notNumber__check" type="checkbox">
+                            <span class="boloc__notNumber__txt">8</span>
+                        </label>
+                        <label class="boloc__notNumber">
+                            <input class="uk-checkbox boloc__notNumber__check" type="checkbox">
+                            <span class="boloc__notNumber__txt">9</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ul class="boloc__accordion" uk-accordion="multiple: true">
+            <li class="boloc__accordion__li uk-open">
+                <a class="uk-accordion-title boloc__accordion__title" href="#">THEO NHÀ MẠNG</a>
+                <div class="uk-accordion-content boloc__accordion__content">
+                    <div class="uk-grid uk-grid-16 uk-form-stacked" uk-grid>
+                        <div class="uk-width-1-1">
+                            <label class="uk-form-label boloc__accordion__label" for="form-stacked-text">Nhà
+                                mạng</label>
+                            <div class="uk-form-controls">
+                                <div class="uk-width-1-1" uk-form-custom="target: > * > span:first-child">
+                                    <select>
+                                        <option value="">Viettel</option>
+                                        <option value="1">Mobifone</option>
+                                        <option value="2">Vinaphone</option>
+                                        <option value="3">Vietnammobile</option>
+                                    </select>
+                                    <button class="uk-button uk-button-default home__content__btnSort uk-width-1-1"
+                                            type="button" tabindex="-1">
+                                        <span></span>
+                                        <span class="uk-icon uk-position-center-right"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="uk-width-1-2">
+                            <label class="uk-form-label boloc__accordion__label" for="form-stacked-text">Đầu số</label>
+                            <div class="uk-form-controls">
+                                <div class="uk-width-1-1" uk-form-custom="target: > * > span:first-child">
+                                    <select>
+                                        <option value="">Tất cả</option>
+                                        <option value="1">Mobifone</option>
+                                        <option value="2">Vinaphone</option>
+                                        <option value="3">Vietnammobile</option>
+                                    </select>
+                                    <button class="uk-button uk-button-default home__content__btnSort uk-width-1-1"
+                                            type="button" tabindex="-1">
+                                        <span></span>
+                                        <span class="uk-icon uk-position-center-right"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="uk-width-1-2">
+                            <label class="uk-form-label boloc__accordion__label" for="form-stacked-text">Loại số</label>
+                            <div class="uk-form-controls">
+                                <div class="uk-width-1-1" uk-form-custom="target: > * > span:first-child">
+                                    <select>
+                                        <option value="">Tất cả</option>
+                                        <option value="1">Mobifone</option>
+                                        <option value="2">Vinaphone</option>
+                                        <option value="3">Vietnammobile</option>
+                                    </select>
+                                    <button class="uk-button uk-button-default home__content__btnSort uk-width-1-1"
+                                            type="button" tabindex="-1">
+                                        <span></span>
+                                        <span class="uk-icon uk-position-center-right"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="uk-width-1-1">
+                            <label class="uk-form-label boloc__accordion__label" for="form-stacked-text">Tổng
+                                điểm</label>
+                            <div class="uk-form-controls">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="boloc__accordion__li uk-open">
+                <a class="uk-accordion-title boloc__accordion__title" href="#">THEO NGÀY SINH</a>
+                <div class="uk-accordion-content boloc__accordion__content">
+                    <div class="uk-grid uk-grid-16 uk-form-stacked" uk-grid>
+                        <div class="uk-width-1-1">
+                            <label class="uk-form-label boloc__accordion__label" for="form-stacked-text">Ngày
+                                sinh</label>
+                            <div class="uk-form-controls">
+                                <div class="uk-inline uk-width-1-1 boloc__accordion__ngaysinh">
+                                    <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
+                                    <input class="uk-input" type="text" value="21/09/1997">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="boloc__accordion__li uk-open">
+                <a class="uk-accordion-title boloc__accordion__title" href="#">THEO PHONG THUỶ</a>
+                <div class="uk-accordion-content boloc__accordion__content">
+                    <div class="uk-grid uk-grid-16 uk-form-stacked" uk-grid>
+                        <div class="uk-width-1-2">
+                            <label class="uk-form-label boloc__accordion__label" for="form-stacked-text">Chọn
+                                tuổi</label>
+                            <div class="uk-form-controls">
+                                <div class="uk-width-1-1" uk-form-custom="target: > * > span:first-child">
+                                    <select>
+                                        <option value="">Thân</option>
+                                        <option value="1">Mobifone</option>
+                                        <option value="2">Vinaphone</option>
+                                        <option value="3">Vietnammobile</option>
+                                    </select>
+                                    <button class="uk-button uk-button-default home__content__btnSort uk-width-1-1"
+                                            type="button" tabindex="-1">
+                                        <span></span>
+                                        <span class="uk-icon uk-position-center-right"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="uk-width-1-2">
+                            <label class="uk-form-label boloc__accordion__label" for="form-stacked-text">Hợp
+                                mệnh</label>
+                            <div class="uk-form-controls">
+                                <div class="uk-width-1-1" uk-form-custom="target: > * > span:first-child">
+                                    <select>
+                                        <option value="">Tất cả</option>
+                                        <option value="1">Mobifone</option>
+                                        <option value="2">Vinaphone</option>
+                                        <option value="3">Vietnammobile</option>
+                                    </select>
+                                    <button class="uk-button uk-button-default home__content__btnSort uk-width-1-1"
+                                            type="button" tabindex="-1">
+                                        <span></span>
+                                        <span class="uk-icon uk-position-center-right"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="uk-width-1-2">
+                            <label class="uk-form-label boloc__accordion__label" for="form-stacked-text">Giờ
+                                sinh</label>
+                            <div class="uk-form-controls">
+                                <div class="uk-width-1-1" uk-form-custom="target: > * > span:first-child">
+                                    <select>
+                                        <option value="">23H - 1H</option>
+                                        <option value="1">Mobifone</option>
+                                        <option value="2">Vinaphone</option>
+                                        <option value="3">Vietnammobile</option>
+                                    </select>
+                                    <button class="uk-button uk-button-default home__content__btnSort uk-width-1-1"
+                                            type="button" tabindex="-1">
+                                        <span></span>
+                                        <span class="uk-icon uk-position-center-right"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="uk-width-1-2">
+                            <label class="uk-form-label boloc__accordion__label" for="form-stacked-text">Giới
+                                tính</label>
+                            <div class="uk-form-controls">
+                                <div class="uk-width-1-1" uk-form-custom="target: > * > span:first-child">
+                                    <select>
+                                        <option value="">Nữ</option>
+                                        <option value="1">Mobifone</option>
+                                        <option value="2">Vinaphone</option>
+                                        <option value="3">Vietnammobile</option>
+                                    </select>
+                                    <button class="uk-button uk-button-default home__content__btnSort uk-width-1-1"
+                                            type="button" tabindex="-1">
+                                        <span></span>
+                                        <span class="uk-icon uk-position-center-right"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--app-->
+<div id="app" class="uk-height-viewport uk-offcanvas-content uk-overflow-hidden uk-position-relative">
+
+    <!--header-->
+    <div class="header">
+        <!--header__top-->
+        <div class="header__top uk-visible@m">
+            <div class="uk-container">
+                <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
+                    <!--uk-navbar-right-->
+                    <div class="uk-navbar-right">
+                        <div class="uk-navbar-item">
+                            <div class="header__top__txt">Chăm sóc khách hàng: <span>1900 4750</span></div>
+                        </div>
+                        <div class="uk-navbar-item">
+                            <div class="header__top__txt">Hỗ trợ đại lý: <span>0988 855 155</span></div>
+                        </div>
+                        <div class="uk-navbar-item">
+                            <div class="header__top__txt">Tuyển dụng: <span>0979 537 195</span></div>
+                        </div>
+                    </div>
+                    <!--/uk-navbar-right-->
+                </nav>
+            </div>
+        </div>
+        <!--/header__top-->
+
+        <!--header__bottom-->
+        <div class="header__bottom" uk-sticky>
+            <div class="uk-container uk-padding-remove">
+                <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
+                    <!--uk-navbar-left-->
+                    <div class="uk-navbar-left">
+                        <a href="." class="uk-navbar-item uk-logo"><img src="images/logo1.png" alt=""></a>
+                    </div>
+                    <!--/uk-navbar-left-->
+
+                    <!--uk-navbar-right-->
+                    <div class="uk-navbar-right">
+                        <ul class="uk-navbar-nav uk-visible@m">
+                            <li>
+                                <a href="#">Sản phẩm</a>
+                                <div class="uk-navbar-dropdown">
+                                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                                        <li class="uk-active"><a href="#">SIM COOL</a></li>
+                                        <li><a href="#">SIM BIZ</a></li>
+                                        <li><a href="#">SIM SANG</a></li>
+                                        <li><a href="#">SIM MAY</a></li>
+                                        <li><a href="#">SIM PAL</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="#">Tìm Sim*</a></li>
+                            <li><a href="#">Gói cước</a></li>
+                            <li><a href="#">Thanh toán</a></li>
+                            <li><a href="#">Liên hệ</a></li>
+                        </ul>
+                        <div class="uk-navbar-item header__bottom__divider uk-visible@m">
+                            <div class="uk-flex-middle uk-child-width-auto uk-grid-10" uk-grid>
+                                <div>
+                                    <a class="uk-navbar-toggle header__bottom__search" href="#">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                  d="M14.9056 16.3199C13.551 17.3729 11.8487 18 10 18C5.58172 18 2 14.4183 2 10C2 5.58172 5.58172 2 10 2C14.4183 2 18 5.58172 18 10C18 11.8487 17.3729 13.551 16.3199 14.9056L21.7071 20.2929C22.0976 20.6834 22.0976 21.3166 21.7071 21.7071C21.3166 22.0976 20.6834 22.0976 20.2929 21.7071L14.9056 16.3199ZM16 10C16 13.3137 13.3137 16 10 16C6.68629 16 4 13.3137 4 10C4 6.68629 6.68629 4 10 4C13.3137 4 16 6.68629 16 10Z"
+                                                  fill="#777E91"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <div>
+                                    <div class="uk-inline">
+                                        <div class="header__bottom__bell notify" data-count="1"></div>
+                                        <div class="" uk-dropdown="mode: click">
+                                            <ul class="header__listNotify uk-list uk-margin-remove">
+                                                <li class="header__listNotify__li">
+                                                    <a href="" class="uk-link-toggle header__listNotify__link">
+                                                        <div class="uk-grid-16 uk-flex-middle" uk-grid>
+                                                            <div class="uk-width-auto">
+                                                                <div class="header__listNotify__coverImg uk-cover-container uk-border-circle">
+                                                                    <canvas width="40" height="40"></canvas>
+                                                                </div>
+                                                            </div>
+                                                            <div class="uk-width-expand">
+                                                                <div class="header__listNotify__txt">Top 100 Sim số cực
+                                                                    hiếm, hãy nhanh tay sở hữu
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li class="header__listNotify__li">
+                                                    <a href="" class="uk-link-toggle header__listNotify__link">
+                                                        <div class="uk-grid-16 uk-flex-middle" uk-grid>
+                                                            <div class="uk-width-auto">
+                                                                <div class="header__listNotify__coverImg uk-cover-container uk-border-circle">
+                                                                    <canvas width="40" height="40"></canvas>
+                                                                </div>
+                                                            </div>
+                                                            <div class="uk-width-expand">
+                                                                <div class="header__listNotify__txt">Bạn vừa nhận được
+                                                                    <span>voucher ưu đãi</span> từ SIMPAY
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="uk-navbar-item uk-visible@m">
+                            <div class="uk-flex-middle uk-child-width-auto uk-grid-small uk-grid-24-m" uk-grid>
+                                <div>
+                                    <div class="uk-flex-middle uk-child-width-auto uk-grid-10" uk-grid>
+                                        <div>
+                                            <div class="header__user__txt">Xin chào, <span>Hai</span></div>
+                                        </div>
+                                        <div>
+                                            <div class="uk-inline">
+                                                <div class="uk-cover-container uk-border-circle header__bottom__profile">
+                                                    <img src="images/lemanhhai_anhthe.jpg" alt="" uk-cover>
+                                                    <canvas width="40" height="40"></canvas>
+                                                </div>
+                                                <div class="" uk-dropdown="mode: hover">
+                                                    <ul class="uk-nav uk-nav-default">
+                                                        <li class="acc"><a href="profile.php">Tài khoản của tôi</a></li>
+                                                        <li class="history"><a href="#">Lịch sử giao dịch</a></li>
+                                                        <li class="logout"><a href="login.php">Thoát tài khoản</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="uk-inline">
+                                        <div class="header__bottom__cart" data-count=2></div>
+                                        <div class="" uk-dropdown="mode: hover">
+                                            <h5 class="uk-h5">Giỏ hàng của tôi (2)</h5>
+
+                                            <div class="uk-text-center">
+                                                <a href=""
+                                                   class="uk-button uk-button-secondary header__bottom__btn header__bottom__btn--login">Vào
+                                                    giỏ hàng</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="uk-navbar-item uk-hidden@m">
+
+                        </div>
+                    </div>
+                    <!--/uk-navbar-right-->
+                </nav>
+            </div>
+        </div>
+        <!--/header__bottom-->
+    </div>
+    <!--/header-->
+    <div class="uk-section-xsmall uk-background-norepeat uk-background-cover uk-background-center-center"
+         data-src="images/image-from-rawpixel-id-597407-jpeg1.png" uk-img>
+        <div class="uk-container">
+            <div class="" uk-toggle="cls: uk-flex-bottom; mode: media; media: @m" uk-grid>
+                <div class="uk-width-expand">
+                    <div class="uk-height-small" style="height: 125px;"></div>
+                </div>
+                <div class="uk-width-auto">
+                    <a href=""
+                       class="uk-button uk-button-default uk-border-pill profile__btnEdit"><span>Sửa thông tin</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="uk-section profile__section">
+        <div class="uk-container">
+            <div class="uk-grid-small uk-grid-50-m uk-grid-108-l" uk-grid>
+                <div class="uk-width-auto@m">
+                    <div class="profile__card uk-card uk-card-default uk-card-body">
+                        <div class="uk-text-center">
+                            <div class="uk-cover-container uk-border-circle uk-display-inline-block">
+                                <img src="images/lemanhhai_anhthe.jpg" alt="" uk-cover>
+                                <canvas width="120" height="120"></canvas>
+                            </div>
+                        </div>
+                        <div class="uk-text-center profile__card__box">
+                            <div class="profile__card__box__name">Hai LE Manh</div>
+                            <div class="profile__card__box__txt">Thành viên <span>Silver</span> từ 09/2021</div>
+                        </div>
+                        <ul class="uk-list profile__card__list">
+                            <li><span>Số điện thoại</span></li>
+                            <li><span>Địa chỉ mail</span></li>
+                            <li class="verified"><span>Số CMND/ Hộ chiếu</span></li>
+                        </ul>
+                        <div class="profile__card__logout">
+                            <a href="">Thoát tài khoản</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="uk-width-expand">
+                    <div uk-grid>
+                        <div class="uk-width-auto@m">
+                            <div class="profile__width">
+                                <h3 class="uk-h3 profile__content__title">Quản lý tài khoản</h3>
+                                <form class="uk-form-stacked">
+                                    <fieldset class="uk-fieldset">
+
+                                        <legend class="uk-legend profile__form__title">Thông tin cá nhân</legend>
+                                        <div class="">
+                                            <div class="uk-child-width-1-1 uk-grid-small uk-grid-24-m" uk-grid>
+                                                <div>
+                                                    <label class="uk-form-label profile__form__label"
+                                                           for="form-stacked-text">HỌ VÀ TÊN*</label>
+                                                    <div class="uk-form-controls">
+                                                        <div class="uk-inline uk-width-1-1">
+                                                            <a class="profile__form__edit uk-form-icon uk-form-icon-flip"
+                                                               href="#" uk-icon="icon: link"></a>
+                                                            <input disabled class="uk-input profile__form__input"
+                                                                   id="form-stacked-text" type="text" placeholder=""
+                                                                   value="Lê Hồng Nhung">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <label class="uk-form-label profile__form__label"
+                                                           for="form-stacked-text">NGÀY SINH*</label>
+                                                    <div class="uk-form-controls">
+                                                        <div class="uk-inline uk-width-1-1">
+                                                            <a class="profile__form__iconDate uk-form-icon uk-form-icon-flip"
+                                                               href="#" uk-icon="icon: link"></a>
+                                                            <input class="uk-input profile__form__input" type="text"
+                                                                   value="21/09/1997">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="uk-width-1-2@s">
+                                                    <label class="uk-form-label profile__form__label"
+                                                           for="form-stacked-text">SỐ CMND/ CCCD/ HỘ CHIẾU*</label>
+                                                    <div class="uk-form-controls">
+                                                        <input class="uk-input profile__form__input verified"
+                                                               id="form-stacked-text" type="text" placeholder=""
+                                                               value="061092170">
+                                                    </div>
+                                                </div>
+                                                <div class="uk-width-1-2@s">
+                                                    <label class="uk-form-label profile__form__label"
+                                                           for="form-stacked-text">NGÀY CẤP*</label>
+                                                    <div class="uk-form-controls">
+                                                        <input class="uk-input profile__form__input verified"
+                                                               id="form-stacked-text" type="text" placeholder=""
+                                                               value="04/02/1991">
+                                                    </div>
+                                                </div>
+                                                <div class="uk-width-1-2@s">
+                                                    <label class="uk-form-label profile__form__label"
+                                                           for="form-stacked-text">NƠI CẤP*</label>
+                                                    <div class="uk-form-controls">
+                                                        <input class="uk-input profile__form__input verified"
+                                                               id="form-stacked-text" type="text" placeholder=""
+                                                               value="Công an tỉnh A">
+                                                    </div>
+                                                </div>
+                                                <div class="uk-width-1-2@s">
+                                                    <label class="uk-form-label profile__form__label"
+                                                           for="form-stacked-text">Quốc tịch</label>
+                                                    <div class="uk-form-controls">
+                                                        <div class="uk-width-1-1"
+                                                             uk-form-custom="target: > * > span:first-child">
+                                                            <select>
+                                                                <option value="">Việt nam</option>
+                                                                <option value="1">Option 01</option>
+                                                                <option value="2">Option 02</option>
+                                                                <option value="3">Option 03</option>
+                                                                <option value="4">Option 04</option>
+                                                            </select>
+                                                            <button class="profile__form__btnSelect uk-width-1-1 uk-button uk-button-default"
+                                                                    type="button" tabindex="-1">
+                                                                <span></span>
+                                                                <span class="uk-position-center-right"
+                                                                      uk-icon="icon: chevron-down"></span>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <label class="uk-form-label profile__form__label"
+                                                           for="form-stacked-text">Nơi đăng ký thường trú</label>
+                                                    <div class="uk-form-controls">
+                                                        <div class="uk-inline uk-width-1-1">
+                                                            <a class="profile__form__edit uk-form-icon uk-form-icon-flip"
+                                                               href="#" uk-icon="icon: link"></a>
+                                                            <input disabled class="uk-input profile__form__input"
+                                                                   id="form-stacked-text" type="text" placeholder=""
+                                                                   value="144 Đội Cấn, Ba Đình, Hà Nội">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <label class="uk-form-label profile__form__label"
+                                                           for="form-stacked-text">Số điện thoại</label>
+                                                    <div class="uk-form-controls">
+                                                        <div class="uk-grid-16" uk-grid>
+                                                            <div class="uk-width-expand">
+                                                                <input class="uk-input profile__form__input"
+                                                                       id="form-stacked-text" type="tel" placeholder=""
+                                                                       value="0946787200">
+                                                            </div>
+                                                            <div class="uk-width-auto">
+                                                                <button type="button"
+                                                                        class="login__box__form__btnSubmit uk-button uk-button-secondary uk-width-1-1">
+                                                                    <span>Xác minh</span></button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <label class="uk-form-label profile__form__label"
+                                                           for="form-stacked-text">email</label>
+                                                    <div class="uk-form-controls">
+                                                        <div class="uk-grid-16" uk-grid>
+                                                            <div class="uk-width-expand">
+                                                                <input class="uk-input profile__form__input"
+                                                                       id="form-stacked-text" type="email"
+                                                                       placeholder="" value="infor@gmail.com">
+                                                            </div>
+                                                            <div class="uk-width-auto">
+                                                                <button type="button"
+                                                                        class="login__box__form__btnSubmit uk-button uk-button-secondary uk-width-1-1">
+                                                                    <span>Xác minh</span></button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <label class="uk-form-label profile__form__label"
+                                                           for="form-stacked-text">ĐỊA CHỈ GIAO HÀNG</label>
+                                                    <div class="uk-form-controls">
+                                                        <div class="uk-inline uk-width-1-1">
+                                                            <a class="profile__form__edit uk-form-icon uk-form-icon-flip"
+                                                               href="#" uk-icon="icon: link"></a>
+                                                            <input disabled class="uk-input profile__form__input"
+                                                                   id="form-stacked-text" type="text" placeholder=""
+                                                                   value="208 Nguyễn Hữu Cảnh, Phường 22, Bình Thạnh, Hồ Chí Minh ">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--footer-->
+    <div class="footer">
+        <!--footer__top-->
+        <div class="footer__top uk-overflow-hidden"
+             uk-scrollspy="cls: uk-animation-slide-bottom-small; target: .footer__top__img; delay: 300; repeat: true">
+            <div class="uk-container">
+                <div class="uk-grid-small uk-grid-33-m uk-flex-bottom" uk-grid>
+                    <div class="uk-width-auto@m uk-visible@m">
+                        <img class="footer__top__img" src="images/Group3880.png" alt="">
+                    </div>
+                    <div class="uk-width-expand">
+                        <div class="footer__top__section">
+                            <div class="uk-grid-24 uk-grid-62-m uk-flex-middle" uk-grid>
+                                <div class="uk-width-auto@m">
+                                    <div class="footer__top__w">
+                                        <h3 class="uk-h3 footer__top__title">Liên hệ với chúng tôi</h3>
+                                        <div class="footer__top__desc">Nhập sô điện thoại của bạn để chúng tôi có thể tư
+                                            vấn tốt hơn
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="uk-width-expand">
+                                    <div class="uk-grid-10 uk-grid-16-m" uk-grid>
+                                        <div class="uk-width-expand">
+                                            <div class="uk-inline uk-width-1-1">
+                                                <span class="uk-form-icon" uk-icon="icon: user"></span>
+                                                <input class="uk-input footer__top__inputRegister" type="tel"
+                                                       placeholder="Số điện thoại">
+                                            </div>
+                                        </div>
+                                        <div class="uk-width-auto">
+                                            <button class="uk-button footer__top__btnSubmit uk-button-secondary"
+                                                    data-mb="." data-pc="Gửi"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/footer__top-->
+
+        <!--footer__bottom-->
+        <div class="footer__bottom">
+            <div class="uk-container">
+                <div class="uk-grid uk-grid-20 uk-grid-101-m" uk-grid>
+                    <div class="uk-width-auto@m">
+                        <div class="footer__bottom__width">
+                            <div class="uk-child-width-auto uk-child-width-1-1@m uk-grid-20 uk-flex-between uk-flex-middle"
+                                 uk-grid>
+                                <div>
+                                    <figure class="footer__bottom__logo uk-display-inline-block"><img
+                                            src="images/logo.png" alt=""></figure>
+                                </div>
+                                <div>
+                                    <div class="uk-grid uk-grid-16 uk-child-width-auto">
+                                        <div><a uk-tooltip="Youtube" href=""
+                                                class="footer__bottom__socialIcon footer__bottom__socialIcon--youtube"></a>
+                                        </div>
+                                        <div><a uk-tooltip="Facebook" href=""
+                                                class="footer__bottom__socialIcon footer__bottom__socialIcon--fb"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="uk-width-expand">
+                        <ul class="uk-hidden@m" uk-accordion="multiple: true">
+                            <li>
+                                <a class="uk-accordion-title" href="#">VỀ SIMPAY</a>
+                                <div class="uk-accordion-content">
+                                    <ul class="uk-list footer__bottom__menuList">
+                                        <li><a href="">Giới thiệu về Simpay</a></li>
+                                        <li><a href="">Tuyển dụng</a></li>
+                                        <li><a href="">Chính sách bảo mật</a></li>
+                                        <li><a href="">Điều khoản sử dụng</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="uk-accordion-title" href="#">HỖ TRỢ KHÁCH HÀNG</a>
+                                <div class="uk-accordion-content">
+                                    <ul class="uk-list footer__bottom__menuList">
+                                        <li><a href="">Hottline chăm sóc khách hàng: 1900 4750</a></li>
+                                        <li><a href="">Mail hỗ trợ: cskh@simpay.vn</a></li>
+                                        <li><a href="">Câu hỏi thường gặp</a></li>
+                                        <li><a href="">Hướng dẫn trả góp</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="uk-open">
+                                <a class="uk-accordion-title" href="#">PHƯƠNG THỨC THANH TOÁN</a>
+                                <div class="uk-accordion-content">
+                                    <div class="uk-child-width-auto uk-grid-12" uk-grid>
+                                        <div><img src="images/visa.png" alt=""></div>
+                                        <div><img src="images/mastercard.png" alt=""></div>
+                                        <div><img src="images/the.png" alt=""></div>
+                                        <div><img src="images/tienmat.png" alt=""></div>
+                                        <div><img src="images/tragop.png" alt=""></div>
+                                        <div><img src="images/mastercard.png" alt=""></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="uk-accordion-title" href="#">TRỤ SỞ CHÍNH</a>
+                                <div class="uk-accordion-content">
+                                    <ul class="uk-list footer__bottom__menuList">
+                                        <li>Địa chỉ: Tầng 2, Tòa nhà 78 Trần Hưng Đạo, Hoàn Kiếm, Hà Nội</li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="uk-child-width-auto@m uk-visible@m" uk-grid>
+                            <div>
+                                <h4 class="uk-h4 footer__bottom__title">VỀ SIMPAY</h4>
+                                <ul class="uk-list footer__bottom__menuList">
+                                    <li><a href="">Giới thiệu về Simpay</a></li>
+                                    <li><a href="">Tuyển dụng</a></li>
+                                    <li><a href="">Chính sách bảo mật</a></li>
+                                    <li><a href="">Điều khoản sử dụng</a></li>
+                                </ul>
+                            </div>
+                            <div class="uk-width-1-3@m">
+                                <h4 class="uk-h4 footer__bottom__title">HỖ TRỢ KHÁCH HÀNG</h4>
+                                <ul class="uk-list footer__bottom__menuList">
+                                    <li><a href="">Hottline chăm sóc khách hàng: 1900 4750</a></li>
+                                    <li><a href="">Mail hỗ trợ: cskh@simpay.vn</a></li>
+                                    <li><a href="">Câu hỏi thường gặp</a></li>
+                                    <li><a href="">Hướng dẫn trả góp</a></li>
+                                </ul>
+                            </div>
+                            <div class="uk-width-1-4@m">
+                                <h4 class="uk-h4 footer__bottom__title">PHƯƠNG THỨC THANH TOÁN</h4>
+                                <div class="uk-child-width-auto uk-grid-12" uk-grid>
+                                    <div><img src="images/visa.png" alt=""></div>
+                                    <div><img src="images/mastercard.png" alt=""></div>
+                                    <div><img src="images/the.png" alt=""></div>
+                                    <div><img src="images/tienmat.png" alt=""></div>
+                                    <div><img src="images/tragop.png" alt=""></div>
+                                    <div><img src="images/momo.png" alt=""></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="footer__bottom__width1">
+                                    <h4 class="uk-h4 footer__bottom__title">TRỤ SỞ CHÍNH</h4>
+                                    <ul class="uk-list footer__bottom__menuList">
+                                        <li>Địa chỉ: Tầng 2, Tòa nhà 78 Trần Hưng Đạo, Hoàn Kiếm, Hà Nội</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer__sectionBaohanh uk-section-xsmall uk-visible@m">
+                            <div class="uk-child-width-auto uk-grid-divider" uk-grid>
+                                <div>
+                                    <div class="uk-flex-middle uk-grid-48-m" uk-grid>
+                                        <div>
+                                            <h4 class="uk-h4 footer__sectionBaohanh__title">Hỗ trợ đại lý</h4>
+                                        </div>
+                                        <div>
+                                            <div class="footer__sectionBaohanh__desc">0988 855 155</div>
+                                            <div class="footer__sectionBaohanh__desc">daily@simpay.vn</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="uk-flex-middle uk-grid-48-m" uk-grid>
+                                        <div>
+                                            <h4 class="uk-h4 footer__sectionBaohanh__title">Hỗ trợ đại lý</h4>
+                                        </div>
+                                        <div>
+                                            <div class="footer__sectionBaohanh__desc">0979 537 195</div>
+                                            <div class="footer__sectionBaohanh__desc">tuyendung@simpay.vn</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="uk-section-xsmall footer__sectionCopyright">
+                    <div class="footer__sectionCopyright__title">© 2021 - Bản quyền của Công ty SIMPAY</div>
+                    <div class="footer__sectionCopyright__desc">Giấy chứng nhận Đăng ký kinh doanh số 0000000000 do Sở
+                        Kế hoạch và Đầu tư Thành Phố Hà Nội cấp ngày 10/10/2020
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/footer__bottom-->
+    </div>
+    <!--/footer-->
+</div>
+<!--/app-->
+<!--backtop-->
+<a href="#" class="back-to-top" uk-scroll>
+    <img src="images/Uptop.png" alt="">
+</a>
+<!--/backtop-->
+</body>
+</html>

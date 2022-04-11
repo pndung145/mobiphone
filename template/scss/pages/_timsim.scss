@@ -1,0 +1,7 @@
+.timsim{
+  &__section{
+    @include media-breakpoint-up('m'){
+      padding-top: 32px;
+    }
+  }
+}

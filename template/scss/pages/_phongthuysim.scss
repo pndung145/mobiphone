@@ -1,0 +1,92 @@
+.phongthuysim{
+  &__section{
+    @include media-breakpoint-up('m'){
+      padding-top: 32px;
+      padding-bottom: 88px;
+    }
+  }
+  &__title{
+    @extend .fz-32;
+    line-height: (60/32);
+    color: #1D1E41;
+    font-family: $font-SVNGilroy-XBold;
+    margin: 0;
+    span{
+      color: #3772FF;
+    }
+  }
+  &__desc{
+    color: #777E90;
+    @extend .fz-14;
+    line-height: (24/14);
+    span{
+      color: #141416;
+      font-family: $font-SVNGilroy-Bold;
+    }
+  }
+  &__card{
+    border: 1px solid #E6E8EC;
+    box-sizing: border-box;
+    padding: 15px;
+    @include media-breakpoint-up('m'){
+      padding: 32px;
+    }
+    &__title{
+      margin: 0;
+      color: #000000;
+      @extend .fz-20;
+      font-family: $font-SVNGilroy-Bold;
+    }
+    &__desc{
+      margin: 0;
+      color: #000000;
+      @extend .fz-16;
+      font-family: $font-SVNGilroy-Medium;
+    }
+    &__txt{
+      color: #141416;
+      @extend .fz-16;
+      font-family: $font-SVNGilroy-Medium;
+    }
+    &__txt1{
+      color: #3772FF;
+      font-family: $font-SVNGilroy-Bold;
+    }
+    &__txt2{
+      @extend .fz-48;
+      font-family: $font-SVNGilroy-XBold;
+    }
+  }
+  &__item1{
+    &:nth-child(n+2){
+      margin-top: 15px;
+      @include media-breakpoint-up('m'){
+        margin-top: 25px;
+      }
+    }
+    &__desc{
+      @extend .fz-16;
+      color: #000;
+      font-family: $font-SVNGilroy-Medium;
+      span{
+        @extend .phongthuysim__card__txt1;
+      }
+    }
+    &__title{
+      @extend .fz-16;
+      color: #000;
+      font-family: $font-SVNGilroy-Bold;
+    }
+    &__list{
+      @extend .phongthuysim__item1__desc;
+    }
+  }
+  &__item{
+    &:nth-child(n+2){
+      margin-top: 20px;
+      @include media-breakpoint-up('m'){
+        margin-top: 48px;
+      }
+    }
+  }
+}

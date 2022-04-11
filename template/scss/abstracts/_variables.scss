@@ -1,0 +1,42 @@
+// Fonts families
+$font-primary: 'Arial Regular',sans-serif;
+$font-Roboto: 'Roboto Regular',sans-serif;
+$font-Roboto-Bold: 'Roboto Bold',sans-serif;
+$font-Roboto-Medium: 'Roboto Medium',sans-serif;
+$font-Roboto-LightItalic: 'Roboto Light Italic',sans-serif;
+$font-Roboto-Black: 'Roboto Black',sans-serif;
+$font-Roboto-BoldItalic: 'Roboto Bold Italic',sans-serif;
+$font-Verdana: 'Verdana Regular',sans-serif;
+$font-Verdana-Bold: 'Verdana Bold',sans-serif;
+
+$font-SVNGilroy-Regular: 'SVN Gilroy Regular',sans-serif;
+$font-SVNGilroy-Bold: 'SVN Gilroy Bold',sans-serif;
+$font-SVNGilroy-SemiBold: 'SVN Gilroy SemiBold',sans-serif;
+$font-SVNGilroy-Medium: 'SVN Gilroy Medium',sans-serif;
+$font-SVNGilroy-XBold: 'SVN Gilroy XBold',sans-serif;
+$font-SVNGilroy-Italic: 'SVN Gilroy Italic',sans-serif;
+
+$font-MonumentExtended-Regular: 'Monument Extended Regular',sans-serif;
+
+//$font-secondary: 'Playfair Display',sans-serif;
+
+// Font-size base
+$base-font: 14px !default;
+$base-design-font: 14px !default;
+
+// width container in design
+$container: 1264px;
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+$grid-breakpoints: (
+  x: 320px,
+  xs: 375px,
+  s: 640px,
+  m: 960px,
+  l: 1200px,
+  xl: 1600px,
+  hd:1920px,
+) !default;

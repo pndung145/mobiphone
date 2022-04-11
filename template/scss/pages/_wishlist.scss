@@ -1,0 +1,10 @@
+.wishlist{
+  &__section{
+
+  }
+  &__txt{
+    color: #777E90;
+    @extend .fz-16;
+    line-height: (20/16);
+  }
+}

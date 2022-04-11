@@ -1,0 +1,43 @@
+.breadcrumb{
+  &__section{
+    $x:10px;
+    padding-top: #{$x};
+    padding-bottom: #{$x};
+    @include media-breakpoint-up('m'){
+      $x:17.5px;
+      padding-top: #{$x};
+      padding-bottom: #{$x};
+    }
+    &::-webkit-scrollbar{
+      display: none;
+    }
+    background: #F4F5F6;
+    .uk-breadcrumb{
+      width: max-content;
+      $x:15px;
+      >li{
+        &:nth-child(n+2){
+          &:before{
+            $y:12px;
+            content: ">";
+            margin: 0 #{$y} 0 calc(#{$y} - 4px);
+          }
+        }
+        &:first-child{
+          >*{
+            @include media-breakpoint-down('s'){
+              margin-left: #{$x};
+            }
+          }
+        }
+        &:last-child{
+          >*{
+            @include media-breakpoint-down('s'){
+              margin-right: #{$x};
+            }
+          }
+        }
+      }
+    }
+  }
+}

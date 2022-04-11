@@ -1,0 +1,22 @@
+.pagination{
+  >li{
+    >*{
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #F4F5F6;
+      padding: 0;
+      @extend .fz-14;
+      font-family: $font-SVNGilroy-Bold;
+    }
+    &.uk-active{
+      >*{
+        color: #FFFFFF;
+        background-color: #000000;
+      }
+    }
+  }
+}

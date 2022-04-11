@@ -1,0 +1,13 @@
+.uk{
+  &-container{
+    max-width: #{$container};
+    @include media-breakpoint-up('xs'){
+      //padding-left: 32px;
+      //padding-right: 32px;
+    }
+    @include media-breakpoint-up('m'){
+      //padding-left: 40px;
+      //padding-right: 40px;
+    }
+  }
+}
