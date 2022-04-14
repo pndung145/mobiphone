@@ -1,9 +1,10 @@
 /**************** banner part css start ****************/
 .banner_part{
-    position: relative;
+    // position: relative;
     background-color: $section_bg;
-    overflow: hidden;
+    overflow: hidden;   
     .single_banner_slider{
+        position: relative;
         .banner_text{
             display: table;
             width: 100%;
@@ -65,10 +66,15 @@
         }
         .banner_img{
             position: absolute;
-            right: 0;
+            right: 0 !important;
             top: 30%;
+            width: fit-content ;
         }
     }
+    // .wrap-banner{
+    //     display: flex !important;
+    //     flex-direction: row;
+    // }
     .owl-nav {
         position: absolute;
         right: -20%;

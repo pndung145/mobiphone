@@ -8,7 +8,7 @@ import SectBanner from '../components/home/SectBanner'
 export default function HomePage() {
   return (
     <div>
-        {/* <SectBanner /> */}
+        <SectBanner />
         <Featured />
         <ProductList />
         <Offer />

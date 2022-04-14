@@ -5,7 +5,6 @@ import Header from "./components/share/Header";
 import Footer from "./components/share/Footer";
 import HomePage from "./pages/HomePage";
 import Navigation from './Navigation';
-
 // import CategoryPage from "./pages/CategoryPage";
 // import ProductDetailPage from "./pages/ProductDetailPage";
 // import CartPage from "./pages/CartPage";
