@@ -1,5 +1,5 @@
 import {
-    BrowserRouter as Router, Route, Switch
+    BrowserRouter as Router, Route, Routes
 } from "react-router-dom";
 import HomePage from './pages/HomePage'
 import BlogPage from './pages/BlogPage'
@@ -12,40 +12,22 @@ import ProductDetailPage from './pages/ProductDetailPage'
 import ContactPage from './pages/ContactPage'
 
 function Navigation() {
-    return(
+    return (
         <>
-            <Router>
+            <Routes>
                 {/* <Switch> */}
-                    <Route exact path="/" >
-                        <HomePage />
-                    </Route>
-                    <Route exact path="/blog" >
-                        <BlogPage />
-                    </Route>
-                    <Route exact path="/blog-detail" >
-                        <BlogDetailPage />
-                    </Route>
-                    <Route exact path="/cart" >
-                        <CartPage />
-                    </Route>
-                    <Route exact path="/category" >
-                        <CategoryPage />
-                    </Route>
-                    <Route exact path="/checkout" >
-                        <CheckoutPage />
-                    </Route>
-                    <Route exact path="/confirmation" >
-                        <ConfirmationPage />
-                    </Route>
-                    <Route exact path="/product-detail" >
-                        <ProductDetailPage />
-                    </Route>
-                    <Route exact path="/contact" >
-                        <ContactPage />
-                    </Route>
+                <Route path="/" element={<HomePage />} />
+                <Route path="blog" element={<BlogPage />} />
+                <Route path="blog-detail" element={<BlogDetailPage />} />
+                <Route path="cart" element={<CartPage />} />
+                <Route path="category" element={<CategoryPage />} />
+                <Route path="checkout" element={<CheckoutPage />} />
+                <Route path="confirmation" element={<ConfirmationPage />} />
+                <Route path="product-detail" element={<ProductDetailPage />} />
+                <Route path="contact" element={<ContactPage />} />
                 {/* </Switch> */}
 
-            </Router>
+            </Routes>
         </>
     )
 }

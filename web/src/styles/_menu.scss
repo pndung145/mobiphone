@@ -38,11 +38,19 @@
 	}
 
 	#search_1 {
-		i {
+		svg {
 			color: $black_color;
 		}
 	}
-
+	.icon-header{
+		margin-left: 15px;
+		.favorite-icon{
+			color: red;
+		}
+		.cart-icon{
+			color: $black_color;
+		}
+	}
 	#search_input_box {
 		position: fixed;
 		left: 50%;
@@ -56,7 +64,6 @@
 		z-index: 999;
 		text-align: center;
 		background: $btn_bg;
-
 		::placeholder {
 			color: #fff;
 		}
