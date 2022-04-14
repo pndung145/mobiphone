@@ -3,7 +3,7 @@
 /backend/uploads
 /admin/node_modules
 /web/node_modules
-
+/webv2/node_modules
 # IDE - VSCode
 .vscode/*
 !.vscode/settings.json
