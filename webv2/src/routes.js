@@ -42,8 +42,10 @@ export const Routes = {
 
     Blog: { path: "/blog" },
     BlogAdd: { path: "/blog/add" },
-    BlogDetail: { path: "/blog/detail" },
+    // BlogDetail: { path: "/blog/detail" },
     BlogEdit: { path: "/blog/edit" },
+
+    BlogDetail: {path: "/blog/detail"},
 
     Video: { path: "/video" },
     VideoAdd: { path: "/video/add" },
@@ -53,6 +55,8 @@ export const Routes = {
     Product: { path: "/product" },
     ProductAdd: { path: "/product/add" },
     ProductEdit: { path: "/product/edit" },
+
+    ProductDetail: {path: '/product-detail'},
 
     Countdown: { path: "/countdown" },
     CountdownAdd: { path: "/countdown/add" },
@@ -65,4 +69,6 @@ export const Routes = {
 
     User: { path: "/user" },
     VoteUser: { path: "/vote-history" },
+
+    Cart: { path: "/cart"}
 };

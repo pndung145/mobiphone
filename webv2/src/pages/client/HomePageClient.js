@@ -1,25 +1,26 @@
 import React from 'react';
 import HomeBlog from '../../components/home/HomeBlog';
-import HomeContentDelight from '../../components/home/HomeContentDelight';
 import HomeSlider from '../../components/home/HomeSlider';
-import HomeVoteRank from '../../components/home/HomeVoteRank';
 import Footer from '../../components/layout/Footer';
 import Header from '../../components/layout/Header';
-import Banner from '../../components/layout/Banner'
+import SectBanner from '../../components/home/SectBanner'
+import Featured from '../../components/home/Featured'
+import ProductList from '../../components/home/ProductList'
+import Offer from '../../components/home/Offer';
+import BestSeller from '../../components/home/BestSeller';
+
 import '../../scss/home.scss';
-
-
 export default () => {
     return(
         <>
             <Header />
-            <Banner />
+            <SectBanner />
             <section className='content' >
-                <HomeSlider />
-                <HomeBlog />
-                <HomeVoteRank />
-                <HomeContentDelight />
-              
+                {/* <HomeSlider /> */}
+                <Featured /> 
+                <ProductList /> 
+                <Offer />
+                <BestSeller />            
             </section>
             <Footer />
         </>

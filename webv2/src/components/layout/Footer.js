@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../../scss/style.scss';
-import logo from '../../img/logo.png'
+import logo from '../../images/logo.png'
 import Feedback from './Feedback';
 export default () => {
     const [show, setShow] = useState(false);

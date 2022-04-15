@@ -16,7 +16,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 // core styles
 import "./scss/volt.scss";
-
+import "./scss/style/style.scss"
 
 ReactDOM.render(
   <ReduxProvider store={store} >

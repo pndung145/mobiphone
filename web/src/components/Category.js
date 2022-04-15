@@ -270,7 +270,7 @@ export default function Category() {
                 </div>
             </section>
 
-            <section className="product_list best_seller">
+            <<section className="product_list best_seller">
                 <div className="container">
                     <div className="row justify-content-center">
                         <div className="col-lg-12">
@@ -321,7 +321,7 @@ export default function Category() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section>>
         </div>
 
 
