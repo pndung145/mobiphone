@@ -68,7 +68,8 @@
     img {
       position: absolute;
       bottom: 0;
-      right: 15px;
+      right: 18%;
+      width: 55%;
 
       @media #{$small_mobile} {
         max-height: 247px;

@@ -3,7 +3,6 @@ import Best1 from '../../images/product/product_1.png'
 import Best2 from '../../images/product/product_2.png'
 import Best3 from '../../images/product/product_3.png'
 import Best4 from '../../images/product/product_4.png'
-import Best5 from '../../images/product/product_5.png'
 
 
 export default function BestSeller() {

@@ -1,8 +1,8 @@
 import React from 'react'
-import Feature1 from '../../images/feature/feature_1.png'
-import Feature2 from '../../images/feature/feature_2.png'
-import Feature3 from '../../images/feature/feature_3.png'
-import Feature4 from '../../images/feature/feature_4.png'
+import Feature1 from '../../images/home/huawei.png'
+import Feature2 from '../../images/home/huawei.png'
+import Feature3 from '../../images/home/iphone12png.png'
+import Feature4 from '../../images/home/133.png'
 
 
 export default function Featured() {

@@ -1,19 +1,18 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { SERVER } from '../../apis/API';
+// import { SERVER } from '../../apis/API';
 import Footer from '../../components/layout/Footer';
 import Header from '../../components/layout/Header';
 import '../../scss/pagination.scss';
 import Product1 from '../../images/product/product_1.png'
 import BestSeller from '../../components/home/BestSeller'
-export default () => {
-
+export default function Product() {
   return (
     <>
-      <Header />
 
       <div>
+
+        <Header />
         <section className="cat_product_area section_padding">
           <div className="container">
             <div className="row">
@@ -132,7 +131,7 @@ export default () => {
                         <p><span>10000 </span> Product Found</p>
                       </div>
                       <div className="single_product_menu d-flex">
-                        <h5>short by : </h5>
+                        <h5 className=''>short by : </h5>
                         <select>
                           <option data-display="Select">name</option>
                           <option value={1}>price</option>
@@ -164,7 +163,7 @@ export default () => {
                 {/* Product */}
                 <div className="row align-items-center latest_product_inner">
                   <div className="col-lg-4 col-sm-6">
-                    <Link to={'/product-detail'}>
+                    <Link to={'/product/detail'}>
                       <div className="single_product_item">
                         <img src={Product1} alt="" />
                         <div className="single_product_text">
@@ -176,7 +175,7 @@ export default () => {
                     </Link>
                   </div>
                   <div className="col-lg-4 col-sm-6">
-                    <Link to={'/product-detail'}>
+                    <Link to={'/product/detail'}>
                       <div className="single_product_item">
                         <img src={Product1} alt="" />
                         <div className="single_product_text">
@@ -188,7 +187,7 @@ export default () => {
                     </Link>
                   </div>
                   <div className="col-lg-4 col-sm-6">
-                    <Link to={'/product-detail'}>
+                    <Link to={'/product/detail'}>
                       <div className="single_product_item">
                         <img src={Product1} alt="" />
                         <div className="single_product_text">
@@ -200,7 +199,7 @@ export default () => {
                     </Link>
                   </div>
                   <div className="col-lg-4 col-sm-6">
-                    <Link to={'/product-detail'}>
+                    <Link to={'/product/detail'}>
                       <div className="single_product_item">
                         <img src={Product1} alt="" />
                         <div className="single_product_text">
@@ -212,7 +211,7 @@ export default () => {
                     </Link>
                   </div>
                   <div className="col-lg-4 col-sm-6">
-                    <Link to={'/product-detail'}>
+                    <Link to={'/product/detail'}>
                       <div className="single_product_item">
                         <img src={Product1} alt="" />
                         <div className="single_product_text">
@@ -224,7 +223,7 @@ export default () => {
                     </Link>
                   </div>
                   <div className="col-lg-4 col-sm-6">
-                    <Link to={'/product-detail'}>
+                    <Link to={'/product/detail'}>
                       <div className="single_product_item">
                         <img src={Product1} alt="" />
                         <div className="single_product_text">
@@ -236,7 +235,7 @@ export default () => {
                     </Link>
                   </div>
                   <div className="col-lg-4 col-sm-6">
-                    <Link to={'/product-detail'}>
+                    <Link to={'/product/detail'}>
                       <div className="single_product_item">
                         <img src={Product1} alt="" />
                         <div className="single_product_text">
@@ -248,7 +247,7 @@ export default () => {
                     </Link>
                   </div>
                   <div className="col-lg-4 col-sm-6">
-                    <Link to={'/product-detail'}>
+                    <Link to={'/product/detail'}>
                       <div className="single_product_item">
                         <img src={Product1} alt="" />
                         <div className="single_product_text">
@@ -260,7 +259,7 @@ export default () => {
                     </Link>
                   </div>
                   <div className="col-lg-4 col-sm-6">
-                    <Link to={'/product-detail'}>
+                    <Link to={'/product/detail'}>
                       <div className="single_product_item">
                         <img src={Product1} alt="" />
                         <div className="single_product_text">
@@ -302,10 +301,10 @@ export default () => {
         </section>
 
         <BestSeller />
+        <Footer />
       </div>
 
 
-      <Footer />
     </>
   )
 }

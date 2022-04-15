@@ -1,13 +1,15 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Footer from '../../components/Footer'
 import Header from '../../components/layout/Header'
 import Product1 from '../../images/product/single-product/cart-1.jpg'
 
 export default function CartDetail() {
+    // const [count, setCount] = useState()
     return (
         <div>
             <Header />
-            <section className="cart_area padding_top">
+            <section className="cart_area padding_top cart-section">
                 <div className="container">
                     <div className="cart_inner">
                         <div className="table-responsive">
@@ -24,7 +26,7 @@ export default function CartDetail() {
                                     <tr>
                                         <td>
                                             <div className="media">
-                                                <div className="d-flex">
+                                                <div className="d-flex wrap-image-cart">
                                                     <img src={Product1} alt="" />
                                                 </div>
                                                 <div className="media-body">
@@ -38,7 +40,8 @@ export default function CartDetail() {
                                         <td>
                                             <div className="product_count">
                                                 <span className="input-number-decrement"> <i className="ti-angle-down" /></span>
-                                                <input className="input-number" type="text" defaultValue={1} min={0} max={10} />
+                                                <input className="input-number" type="text" />
+                                                    
                                                 <span className="input-number-increment"> <i className="ti-angle-up" /></span>
                                             </div>
                                         </td>
@@ -49,7 +52,7 @@ export default function CartDetail() {
                                     <tr>
                                         <td>
                                             <div className="media">
-                                                <div className="d-flex">
+                                                <div className="d-flex wrap-image-cart">
                                                     <img src={Product1} alt="" />
                                                 </div>
                                                 <div className="media-body">
@@ -62,18 +65,9 @@ export default function CartDetail() {
                                         </td>
                                         <td>
                                             <div className="product_count">
-                                                {/* <input type="text" value="1" min="0" max="10" title="Quantity:"
-                      class="input-text qty input-number" />
-                    <button
-                      class="increase input-number-increment items-count" type="button">
-                      <i class="ti-angle-up"></i>
-                    </button>
-                    <button
-                      class="reduced input-number-decrement items-count" type="button">
-                      <i class="ti-angle-down"></i>
-                    </button> */}
                                                 <span className="input-number-decrement"> <i className="ti-angle-down" /></span>
-                                                <input className="input-number" type="text" defaultValue={1} min={0} max={10} />
+                                                <input className="input-number" type="text" />
+                                                    
                                                 <span className="input-number-increment"> <i className="ti-angle-up" /></span>
                                             </div>
                                         </td>
@@ -84,7 +78,7 @@ export default function CartDetail() {
                                     <tr>
                                         <td>
                                             <div className="media">
-                                                <div className="d-flex">
+                                                <div className="d-flex wrap-image-cart">
                                                     <img src={Product1} alt="" />
                                                 </div>
                                                 <div className="media-body">
@@ -98,7 +92,8 @@ export default function CartDetail() {
                                         <td>
                                             <div className="product_count">
                                                 <span className="input-number-decrement"> <i className="ti-angle-down" /></span>
-                                                <input className="input-number" type="text" defaultValue={1} min={0} max={10} />
+                                                <input className="input-number" type="text" />
+                                                    
                                                 <span className="input-number-increment"> <i className="ti-angle-up" /></span>
                                             </div>
                                         </td>
@@ -172,8 +167,8 @@ export default function CartDetail() {
                                 </tbody>
                             </table>
                             <div className="checkout_btn_inner float-right">
-                                <a className="btn_1" href="#">Continue Shopping</a>
-                                <a className="btn_1 checkout_btn_1" href="#">Proceed to checkout</a>
+                                <Link className="btn_1" to={'/product'}>Continue Shopping</Link>
+                                <Link className="btn_1 checkout_btn_1" to={'/checkout'}>Proceed to checkout</Link>
                             </div>
                         </div>
                     </div>

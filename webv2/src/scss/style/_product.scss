@@ -380,6 +380,9 @@
   }
 
   .single_product_menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     @media #{$small_mobile}{
       width: 50%;
       float: left;
@@ -393,6 +396,9 @@
     }
     @media #{$medium_device}{
     
+    }
+    select{
+      margin-left: 10px;      
     }
     p {
       color: #020202;

@@ -1,10 +1,10 @@
-import moment from 'moment';
+// import moment from 'moment';
 import React, { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom';
-import { SERVER } from '../../apis/API';
-import { getBlogThunk } from '../../redux/blogSlice';
-import { Routes } from '../../routes';
+// import { useDispatch } from 'react-redux';
+// import { useHistory } from 'react-router-dom';
+// import { SERVER } from '../../apis/API';
+// import { getBlogThunk } from '../../redux/blogSlice';
+// import { Routes } from '../../routes';
 import Blog1 from '../../images/blog/single_blog_1.png'
 import Post1 from '../../images/post/post_1.png'
 import Post2 from '../../images/post/post_5.png'

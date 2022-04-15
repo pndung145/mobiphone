@@ -47,28 +47,22 @@ export const Routes = {
 
     BlogDetail: {path: "/blog/detail"},
 
-    Video: { path: "/video" },
-    VideoAdd: { path: "/video/add" },
-    VideoDetail: { path: "/video/detail" },
-    VideoEdit: { path: "/video/edit" },
-
     Product: { path: "/product" },
     ProductAdd: { path: "/product/add" },
     ProductEdit: { path: "/product/edit" },
 
-    ProductDetail: {path: '/product-detail'},
+    ProductDetail: {path: '/product/detail'},
 
-    Countdown: { path: "/countdown" },
-    CountdownAdd: { path: "/countdown/add" },
-    CountdownDetail: { path: "/countdown/detail" },
-    CountdownEdit: { path: "/countdown/edit" },
 
     Fee: { path: "/fee" },
     FeeAdd: { path: "/fee/add" },
     FeeDetail: { path: "/fee/detail" },
 
     User: { path: "/user" },
-    VoteUser: { path: "/vote-history" },
 
-    Cart: { path: "/cart"}
+    Cart: { path: "/cart"},
+
+    Checkout: {path: "/checkout"},
+
+    Confirmation: {path: "/confirmation"}
 };

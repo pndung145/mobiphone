@@ -95,12 +95,7 @@ export default () => {
                                         <Link to={'/blog'} >BLOG</Link>
                                     </li>
                                     <li className="menu__item">
-                                        <Link to={'/video'} >PRODUCT</Link>
-                                    </li>
-                                    <li className="menu__item">
-                                        <Link to={'/countdown'}>
-                                            COUNTDOWN VOTE
-                                        </Link>
+                                        <Link to={'/product'} >PRODUCT</Link>
                                     </li>
                                     <li className="menu__item">
                                         <Link to={'/vote-history'} >
