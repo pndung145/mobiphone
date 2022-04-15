@@ -84,12 +84,12 @@ export default () => {
 
 
 function PrivateRoute({ children, ...rest }) {
-  let token = localStorage.getItem("token")
+  // let token = localStorage.getItem("token")
 
   // if (token)
     return <AppRoute {...rest} children={children} />
 
-  return <Redirect to={Routes.Signin.path} />
+  // return <Redirect to={Routes.Signin.path} />
 }
 
 const AppRoute = (props) => {

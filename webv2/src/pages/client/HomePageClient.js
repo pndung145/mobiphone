@@ -1,6 +1,4 @@
 import React from 'react';
-import HomeBlog from '../../components/home/HomeBlog';
-import HomeSlider from '../../components/home/HomeSlider';
 import Footer from '../../components/layout/Footer';
 import Header from '../../components/layout/Header';
 import SectBanner from '../../components/home/SectBanner'

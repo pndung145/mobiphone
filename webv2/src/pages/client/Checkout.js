@@ -1,10 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Footer from '../../components/layout/Footer'
+import Header from '../../components/layout/Header'
 import Card from '../../images/product/single-product/card.jpg'
 
 export default function Checkout() {
     return (
         <div>
+            <Header />
             <section className="checkout_area padding_top">
                 <div className="container">
                     <div className="returning_customer">
@@ -199,6 +202,7 @@ export default function Checkout() {
                     </div>
                 </div>
             </section>
+            <Footer />
         </div>
 
     )

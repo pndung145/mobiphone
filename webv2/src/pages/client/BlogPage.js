@@ -1,5 +1,5 @@
 // import moment from 'moment';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 // import Pagination from "react-js-pagination";
 // import { useDispatch } from 'react-redux';
 // import { useHistory } from 'react-router-dom';
@@ -56,8 +56,16 @@ export default () => {
                       <p>That dominion stars lights dominion divide years for fourth have don't stars is that
                         he earth it first without heaven in place seed it second morning saying.</p>
                       <ul className="blog-info-link">
-                        <li><a href="#"><i className="far fa-user" /> Travel, Lifestyle</a></li>
-                        <li><a href="#"><i className="far fa-comments" /> 03 Comments</a></li>
+                        <li><a href="#">
+                          <svg style={{ width: '24px', height: '24px' }} viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,6A2,2 0 0,0 10,8A2,2 0 0,0 12,10A2,2 0 0,0 14,8A2,2 0 0,0 12,6M12,13C14.67,13 20,14.33 20,17V20H4V17C4,14.33 9.33,13 12,13M12,14.9C9.03,14.9 5.9,16.36 5.9,17V18.1H18.1V17C18.1,16.36 14.97,14.9 12,14.9Z" />
+                          </svg>
+                          Travel, Lifestyle</a></li>
+                        <li><a href="#">
+                          <svg style={{ width: '24px', height: '24px' }} viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M12 3C6.5 3 2 6.58 2 11C2.05 13.15 3.06 15.17 4.75 16.5C4.75 17.1 4.33 18.67 2 21C4.37 20.89 6.64 20 8.47 18.5C9.61 18.83 10.81 19 12 19C17.5 19 22 15.42 22 11S17.5 3 12 3M12 17C7.58 17 4 14.31 4 11S7.58 5 12 5 20 7.69 20 11 16.42 17 12 17M17 12V10H15V12H17M13 12V10H11V12H13M9 12V10H7V12H9Z" />
+                          </svg>
+                          03 Comments</a></li>
                       </ul>
                     </div>
                   </Link>
@@ -78,8 +86,16 @@ export default () => {
                       <p>That dominion stars lights dominion divide years for fourth have don't stars is that
                         he earth it first without heaven in place seed it second morning saying.</p>
                       <ul className="blog-info-link">
-                        <li><a href="#"><i className="far fa-user" /> Travel, Lifestyle</a></li>
-                        <li><a href="#"><i className="far fa-comments" /> 03 Comments</a></li>
+                        <li><a href="#">
+                          <svg style={{ width: '24px', height: '24px' }} viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,6A2,2 0 0,0 10,8A2,2 0 0,0 12,10A2,2 0 0,0 14,8A2,2 0 0,0 12,6M12,13C14.67,13 20,14.33 20,17V20H4V17C4,14.33 9.33,13 12,13M12,14.9C9.03,14.9 5.9,16.36 5.9,17V18.1H18.1V17C18.1,16.36 14.97,14.9 12,14.9Z" />
+                          </svg>
+                          Travel, Lifestyle</a></li>
+                        <li><a href="#">
+                          <svg style={{ width: '24px', height: '24px' }} viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M12 3C6.5 3 2 6.58 2 11C2.05 13.15 3.06 15.17 4.75 16.5C4.75 17.1 4.33 18.67 2 21C4.37 20.89 6.64 20 8.47 18.5C9.61 18.83 10.81 19 12 19C17.5 19 22 15.42 22 11S17.5 3 12 3M12 17C7.58 17 4 14.31 4 11S7.58 5 12 5 20 7.69 20 11 16.42 17 12 17M17 12V10H15V12H17M13 12V10H11V12H13M9 12V10H7V12H9Z" />
+                          </svg>
+                          03 Comments</a></li>
                       </ul>
                     </div>
                   </Link>
@@ -100,8 +116,16 @@ export default () => {
                       <p>That dominion stars lights dominion divide years for fourth have don't stars is that
                         he earth it first without heaven in place seed it second morning saying.</p>
                       <ul className="blog-info-link">
-                        <li><a href="#"><i className="far fa-user" /> Travel, Lifestyle</a></li>
-                        <li><a href="#"><i className="far fa-comments" /> 03 Comments</a></li>
+                        <li><a href="#">
+                          <svg style={{ width: '24px', height: '24px' }} viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,6A2,2 0 0,0 10,8A2,2 0 0,0 12,10A2,2 0 0,0 14,8A2,2 0 0,0 12,6M12,13C14.67,13 20,14.33 20,17V20H4V17C4,14.33 9.33,13 12,13M12,14.9C9.03,14.9 5.9,16.36 5.9,17V18.1H18.1V17C18.1,16.36 14.97,14.9 12,14.9Z" />
+                          </svg>
+                          Travel, Lifestyle</a></li>
+                        <li><a href="#">
+                          <svg style={{ width: '24px', height: '24px' }} viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M12 3C6.5 3 2 6.58 2 11C2.05 13.15 3.06 15.17 4.75 16.5C4.75 17.1 4.33 18.67 2 21C4.37 20.89 6.64 20 8.47 18.5C9.61 18.83 10.81 19 12 19C17.5 19 22 15.42 22 11S17.5 3 12 3M12 17C7.58 17 4 14.31 4 11S7.58 5 12 5 20 7.69 20 11 16.42 17 12 17M17 12V10H15V12H17M13 12V10H11V12H13M9 12V10H7V12H9Z" />
+                          </svg>
+                          03 Comments</a></li>
                       </ul>
                     </div>
                   </Link>
@@ -122,8 +146,16 @@ export default () => {
                       <p>That dominion stars lights dominion divide years for fourth have don't stars is that
                         he earth it first without heaven in place seed it second morning saying.</p>
                       <ul className="blog-info-link">
-                        <li><a href="#"><i className="far fa-user" /> Travel, Lifestyle</a></li>
-                        <li><a href="#"><i className="far fa-comments" /> 03 Comments</a></li>
+                        <li><a href="#">
+                          <svg style={{ width: '24px', height: '24px' }} viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,6A2,2 0 0,0 10,8A2,2 0 0,0 12,10A2,2 0 0,0 14,8A2,2 0 0,0 12,6M12,13C14.67,13 20,14.33 20,17V20H4V17C4,14.33 9.33,13 12,13M12,14.9C9.03,14.9 5.9,16.36 5.9,17V18.1H18.1V17C18.1,16.36 14.97,14.9 12,14.9Z" />
+                          </svg>
+                          Travel, Lifestyle</a></li>
+                        <li><a href="#">
+                          <svg style={{ width: '24px', height: '24px' }} viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M12 3C6.5 3 2 6.58 2 11C2.05 13.15 3.06 15.17 4.75 16.5C4.75 17.1 4.33 18.67 2 21C4.37 20.89 6.64 20 8.47 18.5C9.61 18.83 10.81 19 12 19C17.5 19 22 15.42 22 11S17.5 3 12 3M12 17C7.58 17 4 14.31 4 11S7.58 5 12 5 20 7.69 20 11 16.42 17 12 17M17 12V10H15V12H17M13 12V10H11V12H13M9 12V10H7V12H9Z" />
+                          </svg>
+                          03 Comments</a></li>
                       </ul>
                     </div>
                   </Link>
@@ -144,8 +176,16 @@ export default () => {
                       <p>That dominion stars lights dominion divide years for fourth have don't stars is that
                         he earth it first without heaven in place seed it second morning saying.</p>
                       <ul className="blog-info-link">
-                        <li><a href="#"><i className="far fa-user" /> Travel, Lifestyle</a></li>
-                        <li><a href="#"><i className="far fa-comments" /> 03 Comments</a></li>
+                        <li><a href="#">
+                          <svg style={{ width: '24px', height: '24px' }} viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,6A2,2 0 0,0 10,8A2,2 0 0,0 12,10A2,2 0 0,0 14,8A2,2 0 0,0 12,6M12,13C14.67,13 20,14.33 20,17V20H4V17C4,14.33 9.33,13 12,13M12,14.9C9.03,14.9 5.9,16.36 5.9,17V18.1H18.1V17C18.1,16.36 14.97,14.9 12,14.9Z" />
+                          </svg>
+                          Travel, Lifestyle</a></li>
+                        <li><a href="#">
+                          <svg style={{ width: '24px', height: '24px' }} viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M12 3C6.5 3 2 6.58 2 11C2.05 13.15 3.06 15.17 4.75 16.5C4.75 17.1 4.33 18.67 2 21C4.37 20.89 6.64 20 8.47 18.5C9.61 18.83 10.81 19 12 19C17.5 19 22 15.42 22 11S17.5 3 12 3M12 17C7.58 17 4 14.31 4 11S7.58 5 12 5 20 7.69 20 11 16.42 17 12 17M17 12V10H15V12H17M13 12V10H11V12H13M9 12V10H7V12H9Z" />
+                          </svg>
+                          03 Comments</a></li>
                       </ul>
                     </div>
                   </Link>
@@ -154,7 +194,9 @@ export default () => {
                   <ul className="pagination">
                     <li className="page-item">
                       <a href="#" className="page-link" aria-label="Previous">
-                        <i className="ti-angle-left" />
+                        <svg style={{ width: '24px', height: '24px' }} viewBox="0 0 24 24">
+                          <path fill="currentColor" d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
+                        </svg>
                       </a>
                     </li>
                     <li className="page-item">
@@ -165,7 +207,9 @@ export default () => {
                     </li>
                     <li className="page-item">
                       <a href="#" className="page-link" aria-label="Next">
-                        <i className="ti-angle-right" />
+                        <svg style={{ width: '24px', height: '24px' }} viewBox="0 0 24 24">
+                          <path fill="currentColor" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
+                        </svg>
                       </a>
                     </li>
                   </ul>
@@ -179,9 +223,9 @@ export default () => {
                     <div className="form-group">
                       <div className="input-group mb-3">
                         <input type="text" className="form-control" placeholder="Search Keyword" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Keyword'" />
-                        <div className="input-group-append">
+                        {/* <div className="input-group-append">
                           <button className="btn" type="button"><i className="ti-search" /></button>
-                        </div>
+                        </div> */}
                       </div>
                     </div>
                     <button className="button rounded-0 primary-bg text-white w-100 btn_1" type="submit">Search</button>
@@ -334,7 +378,7 @@ export default () => {
                 <aside className="single_sidebar_widget newsletter_widget">
                   <h4 className="widget_title">Newsletter</h4>
                   <form action="#">
-                    <div className="form-group">
+                    <div className="form-group mb-3">
                       <input type="email" className="form-control" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email'" placeholder="Enter email" required />
                     </div>
                     <button className="button rounded-0 primary-bg text-white w-100 btn_1" type="submit">Subscribe</button>
