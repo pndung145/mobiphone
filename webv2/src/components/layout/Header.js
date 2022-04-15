@@ -98,7 +98,7 @@ export default () => {
                                         <Link to={'/product'} >PRODUCT</Link>
                                     </li>
                                     <li className="menu__item">
-                                        <Link to={'/vote-history'} >
+                                        <Link to={'/contact'} >
                                             CONTACT
                                         </Link>
                                     </li>

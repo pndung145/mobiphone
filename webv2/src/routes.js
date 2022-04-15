@@ -53,6 +53,7 @@ export const Routes = {
 
     ProductDetail: {path: '/product/detail'},
 
+    Contact: {path: '/contact'},
 
     Fee: { path: "/fee" },
     FeeAdd: { path: "/fee/add" },

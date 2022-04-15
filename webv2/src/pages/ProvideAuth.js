@@ -45,6 +45,7 @@ import CartDetail from "./client/CartDetail";
 import ProductDetail from "./client/ProductDetail";
 import Checkout from "./client/Checkout";
 import Confirmation from "./client/Confirmation";
+import Contact from "./client/Contact"
 
 const RouteWithSidebar = ({ component: Component, ...rest }) => {
     const [loaded, setLoaded] = useState(false);
@@ -137,6 +138,8 @@ export default function ProvideAuth() {
             <RouteWithSidebar exact path={Routes.ProductDetail.path} component={ProductDetail} />
 
             <RouteWithSidebar exact path={Routes.User.path} component={User} />
+
+            <Route exact path={Routes.Contact.path} component={Contact} />
 
             <Route exact path={Routes.Cart.path} component={CartDetail} />
 
