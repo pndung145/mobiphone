@@ -41,7 +41,7 @@ export default function CartDetail() {
                                             <div className="product_count">
                                                 <span className="input-number-decrement"> <i className="ti-angle-down" /></span>
                                                 <input className="input-number" type="text" />
-                                                    
+                            
                                                 <span className="input-number-increment"> <i className="ti-angle-up" /></span>
                                             </div>
                                         </td>

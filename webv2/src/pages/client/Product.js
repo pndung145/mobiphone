@@ -167,7 +167,7 @@ export default function Product() {
                       <div className="single_product_item">
                         <img src={Product1} alt="" />
                         <div className="single_product_text">
-                          <h4>Quartz Belt Watch</h4>
+                          <h4>Quartz Belt Watch áđâsdsadá</h4>
                           <h3>$150.00</h3>
                           <a href="#" className="add_cart">+ add to cart<i className="ti-heart" /></a>
                         </div>

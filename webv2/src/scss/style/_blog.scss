@@ -532,6 +532,10 @@
 
     p {
         margin-bottom: 30px;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;  
+        overflow: hidden;
     }
 
     a {
@@ -546,7 +550,10 @@
         font-size: 18px;
         font-weight: 600;
         margin-bottom: 8px;
-
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;  
+        overflow: hidden;
         @media(min-width: 768px) {
             font-size: 24px;
             margin-bottom: 15px;
