@@ -1,19 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import Footer from '../../components/Footer'
 import Header from '../../components/layout/Header'
 import Product1 from '../../images/product/single-product/cart-1.jpg'
 
 export default function CartDetail() {
+    const [count, setCount] = useState(1)
+
     return (
         <div>
             <Header />
-            <section className="cart_area padding_top">
+            <section className="cart_area padding_top cart-section">
                 <div className="container">
                     <div className="cart_inner">
                         <div className="table-responsive">
                             <table className="table">
                                 <thead>
-                                    <tr>
+                                    <tr className='table-cart'>
                                         <th scope="col">Product</th>
                                         <th scope="col">Price</th>
                                         <th scope="col">Quantity</th>
@@ -21,10 +24,10 @@ export default function CartDetail() {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
+                                    <tr className='table-cart'>
                                         <td>
                                             <div className="media">
-                                                <div className="d-flex">
+                                                <div className="d-flex wrap-image-cart">
                                                     <img src={Product1} alt="" />
                                                 </div>
                                                 <div className="media-body">
@@ -37,19 +40,27 @@ export default function CartDetail() {
                                         </td>
                                         <td>
                                             <div className="product_count">
-                                                <span className="input-number-decrement"> <i className="ti-angle-down" /></span>
-                                                <input className="input-number" type="text" defaultValue={1} min={0} max={10} />
-                                                <span className="input-number-increment"> <i className="ti-angle-up" /></span>
+                                                <button className="input-number-decrement" onClick={() => setCount(count - 1)}>
+                                                    <svg style={{ width: '24px', height: '24px' }} viewBox="0 0 24 24">
+                                                        <path fill="currentColor" d="M19,13H5V11H19V13Z" />
+                                                    </svg>
+                                                </button>
+                                                <p>{count}</p>
+                                                <button className="input-number-increment" onClick={() => setCount(count + 1)}>
+                                                    <svg style={{ width: '24px', height: '24px' }} viewBox="0 0 24 24">
+                                                        <path fill="currentColor" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+                                                    </svg>
+                                                </button>
                                             </div>
                                         </td>
                                         <td>
                                             <h5>$720.00</h5>
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <tr className='table-cart'>
                                         <td>
                                             <div className="media">
-                                                <div className="d-flex">
+                                                <div className="d-flex wrap-image-cart">
                                                     <img src={Product1} alt="" />
                                                 </div>
                                                 <div className="media-body">
@@ -62,29 +73,27 @@ export default function CartDetail() {
                                         </td>
                                         <td>
                                             <div className="product_count">
-                                                {/* <input type="text" value="1" min="0" max="10" title="Quantity:"
-                      class="input-text qty input-number" />
-                    <button
-                      class="increase input-number-increment items-count" type="button">
-                      <i class="ti-angle-up"></i>
-                    </button>
-                    <button
-                      class="reduced input-number-decrement items-count" type="button">
-                      <i class="ti-angle-down"></i>
-                    </button> */}
-                                                <span className="input-number-decrement"> <i className="ti-angle-down" /></span>
-                                                <input className="input-number" type="text" defaultValue={1} min={0} max={10} />
-                                                <span className="input-number-increment"> <i className="ti-angle-up" /></span>
+                                                <button className="input-number-decrement" onClick={() => setCount(count - 1)}>
+                                                    <svg style={{ width: '24px', height: '24px' }} viewBox="0 0 24 24">
+                                                        <path fill="currentColor" d="M19,13H5V11H19V13Z" />
+                                                    </svg>
+                                                </button>
+                                                <p>{count}</p>
+                                                <button className="input-number-increment" onClick={() => setCount(count + 1)}>
+                                                    <svg style={{ width: '24px', height: '24px' }} viewBox="0 0 24 24">
+                                                        <path fill="currentColor" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+                                                    </svg>
+                                                </button>
                                             </div>
                                         </td>
                                         <td>
                                             <h5>$720.00</h5>
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <tr className='table-cart'>
                                         <td>
                                             <div className="media">
-                                                <div className="d-flex">
+                                                <div className="d-flex wrap-image-cart">
                                                     <img src={Product1} alt="" />
                                                 </div>
                                                 <div className="media-body">
@@ -97,9 +106,17 @@ export default function CartDetail() {
                                         </td>
                                         <td>
                                             <div className="product_count">
-                                                <span className="input-number-decrement"> <i className="ti-angle-down" /></span>
-                                                <input className="input-number" type="text" defaultValue={1} min={0} max={10} />
-                                                <span className="input-number-increment"> <i className="ti-angle-up" /></span>
+                                                <button className="input-number-decrement" onClick={() => setCount(count - 1)}>
+                                                    <svg style={{ width: '24px', height: '24px' }} viewBox="0 0 24 24">
+                                                        <path fill="currentColor" d="M19,13H5V11H19V13Z" />
+                                                    </svg>
+                                                </button>
+                                                <p>{count}</p>
+                                                <button className="input-number-increment" onClick={() => setCount(count + 1)}>
+                                                    <svg style={{ width: '24px', height: '24px' }} viewBox="0 0 24 24">
+                                                        <path fill="currentColor" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+                                                    </svg>
+                                                </button>
                                             </div>
                                         </td>
                                         <td>
@@ -165,15 +182,25 @@ export default function CartDetail() {
                                                     <option value={4}>Select a State</option>
                                                 </select>
                                                 <input type="text" placeholder="Postcode/Zipcode" />
-                                                <a className="btn_1" href="#">Update Details</a>
+                                                <a className="btn_1 update_detail" href="#">Update Details</a>
                                             </div>
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
                             <div className="checkout_btn_inner float-right">
-                                <a className="btn_1" href="#">Continue Shopping</a>
-                                <a className="btn_1 checkout_btn_1" href="#">Proceed to checkout</a>
+                                <Link className="btn_1" to={'/product'}>
+                                    <svg style={{ width: '24px', height: '24px' }} viewBox="0 0 24 24">
+                                        <path fill="currentColor" d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
+                                    </svg>
+                                    Continue Shopping
+                                </Link>
+                                <Link className="btn_1 checkout_btn_1" to={'/checkout'}>
+                                    Proceed to checkout
+                                    <svg style={{ width: '24px', height: '24px' }} viewBox="0 0 24 24">
+                                        <path fill="currentColor" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
+                                    </svg>
+                                </Link>
                             </div>
                         </div>
                     </div>

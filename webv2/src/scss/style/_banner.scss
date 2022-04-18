@@ -1,4 +1,4 @@
-/**************** banner part css start ****************/
+    /**************** banner part css start ****************/
 .banner_part{
     // position: relative;
     background-color: $section_bg;
@@ -8,7 +8,7 @@
         .banner_text{
             display: table;
             width: 100%;
-            height: 820px;
+            height: 700px;
             .banner_text_iner{
                 display: table-cell;
                 vertical-align: middle;
@@ -67,8 +67,11 @@
         .banner_img{
             position: absolute;
             right: 0 !important;
-            top: 30%;
-            width: fit-content ;
+            top: 20%;
+            width: 60% ;
+            img{
+                width: 100%;
+            }
         }
     }
     // .wrap-banner{
@@ -136,13 +139,13 @@
         padding: 0;
     }
     
-     @media #{$medium_device}{
-        .banner_img {
-            img{
-                max-width: 75%;
-                float: right;
-            }
-        }
-     }
+    //  @media #{$medium_device}{
+    //     .banner_img {
+    //         img{
+    //             max-width: 75%;
+    //             float: right;
+    //         }
+    //     }
+    //  }
 } 
 /**************** hero part css end ****************/

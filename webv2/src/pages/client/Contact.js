@@ -1,28 +1,13 @@
-import { Card, Container, Row, Table } from '@themesberg/react-bootstrap';
-import moment from 'moment';
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import Footer from '../../components/layout/Footer';
-import Header from '../../components/layout/Header';
-import { getHistoryVoteUserThunk } from '../../redux/voteUserSlice';
+import React from 'react'
+import Footer from '../../components/layout/Footer'
+import Header from '../../components/layout/Header'
 
-export default () => {
-    // let voteUser = useSelector(state => state.voteUser.data);
-    // let dispatch = useDispatch()
-    // useEffect(() => {
-    //     dispatch(getHistoryVoteUserThunk()) // eslint-disable-next-line react-hooks/exhaustive-deps
-    // }, []);
-
-
+export default function Contact() {
     return (
-        <>
+        <div>
             <Header />
-
             <section className="contact-section padding_top">
                 <div className="container">
-                    {/* <div className="d-none d-sm-block mb-5 pb-4">
-                        <div id="map" style={{ height: '480px' }} />
-                    </div> */}
                     <div className="row">
                         <div className="col-12">
                             <h2 className="contact-title">Get in Touch</h2>
@@ -82,22 +67,8 @@ export default () => {
                     </div>
                 </div>
             </section>
-
             <Footer />
-        </>
+        </div>
+
     )
 }
-
-// function TableItem({ index, voteUser }) {
-//     return (
-//         <tr>
-//             <td>
-//                 <Card.Link href="#" className="text-primary fw-bold">{index}</Card.Link>
-//             </td>
-//             <td>{voteUser.productCountDown.title}</td>
-//             <td>{voteUser.productCountDown.product.title}</td>
-//             <td>{voteUser.productCountDown.product.author}</td>
-//             <td>{moment(voteUser.createdAt).format("HH:mm DD-MM-YYYY")}</td>
-//         </tr>
-//     );
-// }   

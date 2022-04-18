@@ -13,8 +13,6 @@ import BlogAdd from './blog/BlogAdd';
 import BlogDetail from "../pages/client/BlogDetail";
 import BlogEdit from "./blog/BlogEdit";
 
-import CountdownPage from "./client/CountdownPage";
-import HistoryUserVote from "./client/HistoryUserVote";
 import HomePageClient from "./client/HomePageClient";
 import Accordion from "./components/Accordion";
 import Alerts from "./components/Alerts";
@@ -32,22 +30,22 @@ import Tables from "./components/Tables";
 import Tabs from "./components/Tabs";
 import Toasts from "./components/Toasts";
 import Tooltips from "./components/Tooltips";
-import CountdownAdd from "./countdown/CountdownAdd";
-import CountdownEdit from "./countdown/CountdownEdit";
+
 import ChangePassword from "./examples/ChangePassword";
-import Product from "./product/Product";
+
+import Product from "./client/Product";
 import ProductAdd from "./product/ProductAdd";
 import ProductEdit from "./product/ProductEdit";
+
 import Settings from './Settings';
 import BootstrapTables from "./tables/BootstrapTables";
 import Transactions from "./Transactions";
 import User from "./user/User";
-import Video from "../pages/client/VideoPage";
-import VideoAdd from "./video/VideoAdd";
-import VideoDetail from "./video/VideoDetail";
-import VideoEdit from "./video/VideoEdit";
 import CartDetail from "./client/CartDetail";
 import ProductDetail from "./client/ProductDetail";
+import Checkout from "./client/Checkout";
+import Confirmation from "./client/Confirmation";
+import Contact from "./client/Contact"
 
 const RouteWithSidebar = ({ component: Component, ...rest }) => {
     const [loaded, setLoaded] = useState(false);
@@ -89,8 +87,8 @@ export default function ProvideAuth() {
     return (
         <Switch>
 
-           
-            <Route exact path={Routes.DashboardOverview.path} component={HomePageClient}  />
+
+            <Route exact path={Routes.DashboardOverview.path} component={HomePageClient} />
 
             {/* pages */}
             {/* <RouteWithSidebar exact path={Routes.DashboardOverview.path} component={DashboardOverview} /> */}
@@ -122,16 +120,16 @@ export default function ProvideAuth() {
             <RouteWithSidebar exact path={Routes.BlogAdd.path} component={BlogAdd} />
             <Route exact path={Routes.BlogDetail.path} component={BlogDetail} />
             <RouteWithSidebar exact path={Routes.BlogEdit.path} component={BlogEdit} />
-          
+
             <Route exact path={Routes.BlogDetail.path} component={BlogDetail} />
 
 
-            <Route exact path={Routes.Video.path} component={Video} />
+            {/* <Route exact path={Routes.Video.path} component={Video} />
             <RouteWithSidebar exact path={Routes.VideoAdd.path} component={VideoAdd} />
             <Route exact path={Routes.VideoDetail.path} component={VideoDetail} />
-            <RouteWithSidebar exact path={Routes.VideoEdit.path} component={VideoEdit} />
+            <RouteWithSidebar exact path={Routes.VideoEdit.path} component={VideoEdit} /> */}
 
-
+            <Route exact path={Routes.Product.path} component={Product} />
             <RouteWithSidebar exact path={Routes.Product.path} component={Product} />
             <RouteWithSidebar exact path={Routes.ProductAdd.path} component={ProductAdd} />
             <RouteWithSidebar exact path={Routes.ProductEdit.path} component={ProductEdit} />
@@ -139,17 +137,15 @@ export default function ProvideAuth() {
             <Route exact path={Routes.ProductDetail.path} component={ProductDetail} />
             <RouteWithSidebar exact path={Routes.ProductDetail.path} component={ProductDetail} />
 
-            <Route exact path={Routes.Countdown.path} component={CountdownPage} />
-            <RouteWithSidebar exact path={Routes.CountdownAdd.path} component={CountdownAdd} />
-            <RouteWithSidebar exact path={Routes.CountdownEdit.path} component={CountdownEdit} />
-
             <RouteWithSidebar exact path={Routes.User.path} component={User} />
-            <Route exact path={Routes.VoteUser.path} component={HistoryUserVote} />
 
-            <Route exact path={Routes.VoteUser.path} component={HistoryUserVote} />
-
+            <Route exact path={Routes.Contact.path} component={Contact} />
 
             <Route exact path={Routes.Cart.path} component={CartDetail} />
+
+            <Route exact path={Routes.Checkout.path} component={Checkout} />
+
+            <Route exact path={Routes.Confirmation.path} component={Confirmation} />
 
             <Redirect from="/" to="/" />
         </Switch>

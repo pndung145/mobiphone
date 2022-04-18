@@ -1,5 +1,5 @@
 import React from 'react'
-import Footer from '../../components/Footer'
+import Footer from '../../components/layout/Footer'
 import Header from '../../components/layout/Header'
 import Product1 from '../../images/product/single-product/product_1.png'
 
@@ -14,7 +14,7 @@ export default function ProductDetail() {
                             <div className="product_slider_img">
                                 <div id="vertical">
                                     <div data-thumb={Product1}>
-                                        <img src={Product1} />
+                                        <img src={Product1} alt="" />
                                     </div>
                                     {/* <div data-thumb={Product1}>
                                         <img src={Product1} />

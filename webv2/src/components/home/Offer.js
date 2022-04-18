@@ -1,5 +1,5 @@
 import React from 'react'
-import OfferImg from '../../images/offer_img.png'
+import OfferImg from '../../images/home/iphone2.png'
 
 export default function Offer() {
     return (
