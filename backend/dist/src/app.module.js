@@ -20,12 +20,13 @@ const order_product_module_1 = require("./order-product/order-product.module");
 const order_module_1 = require("./order/order.module");
 const product_module_1 = require("./product/product.module");
 const user_module_1 = require("./user/user.module");
+const contact_module_1 = require("./contact/contact.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     (0, common_1.Module)({
         imports: [user_module_1.UserModule,
-            mongoose_1.MongooseModule.forRoot('mongodb://localhost/anhtuyet'),
+            mongoose_1.MongooseModule.forRoot('mongodb://localhost/mobilephone'),
             auth_module_1.AuthModule,
             blog_module_1.BlogModule,
             comment_module_1.CommentModule,
@@ -34,6 +35,7 @@ AppModule = __decorate([
             product_module_1.ProductModule,
             order_module_1.OrderModule,
             order_product_module_1.OrderProductModule,
+            contact_module_1.ContactModule,
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],

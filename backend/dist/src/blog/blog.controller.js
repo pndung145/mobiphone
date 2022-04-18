@@ -33,7 +33,7 @@ let BlogController = class BlogController {
         return this.blogService.search(body.textSearch);
     }
     async uploadFile(file, body, req) {
-        return this.blogService.createBlog(body, file.filename, req.user._doc.fullName);
+        return this.blogService.createBlog(body, file.filename, req.user._doc._id);
     }
     async removeBlog(id) {
         return this.blogService.deleteById(id);

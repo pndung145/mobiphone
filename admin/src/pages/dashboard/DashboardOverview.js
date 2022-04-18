@@ -4,7 +4,7 @@ import React from "react";
 
 
 export default () => {
-  const user = JSON.parse(localStorage.getItem("user"));
+  // const user = JSON.parse(localStorage.getItem("user"));
   return (
     <>
       <Row className="justify-content-md-center">

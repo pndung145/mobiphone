@@ -11,11 +11,12 @@ import { OrderProductModule } from './order-product/order-product.module';
 import { OrderModule } from './order/order.module';
 import { ProductModule } from './product/product.module';
 import { UserModule } from './user/user.module';
+import { ContactModule } from './contact/contact.module';
 
 
 @Module({
   imports: [UserModule,
-    MongooseModule.forRoot('mongodb://localhost/anhtuyet'),
+    MongooseModule.forRoot('mongodb://localhost/mobilephone'),
     AuthModule,
     BlogModule,
     CommentModule,
@@ -24,6 +25,7 @@ import { UserModule } from './user/user.module';
     ProductModule,
     OrderModule,
     OrderProductModule,
+    ContactModule,
   ],
   controllers: [AppController],
   providers: [AppService],

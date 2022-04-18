@@ -10,7 +10,7 @@ export class ProductService {
     @InjectModel(Category.name) private categoryModel: Model<CategoryDocument>
   ) { }
   async findByCategory(categoryId) {
-    return this.productModel.find({ category: categoryId }).populate("category", "title", "Category").populate("tag", "title", "Tag").limit(10)
+    return this.productModel.find({ category: categoryId }).populate("category", "title", "Category")
   }
 
 
@@ -19,7 +19,7 @@ export class ProductService {
   }
 
   async findByCreateDate() {
-    return this.productModel.find().sort({ createdAt: -1 }).limit(6).populate("tag", "title", "Tag").populate("category", "title", "Category") ;
+    return this.productModel.find().sort({ createdAt: -1 }).populate("category", "title", "Category");
   }
 
   async create(productDto, photoURL: string) {
@@ -34,21 +34,24 @@ export class ProductService {
   }
   async edit(productId, productDto, photoURL?: string) {
     let product = await this.productModel.findById(productId);
-    if (photoURL) {
-      product.title = productDto.title;
-      product.category = productDto.category;
-      product.price = productDto.price;
-      product.content = productDto.content;
-      product.animate = productDto.animate;
-      product.photoURL = photoURL;
-    } else {
-      product.title = productDto.title;
-      product.category = productDto.category;
-      product.price = productDto.price;
-      product.content = productDto.content;
-      product.animate = productDto.animate;
+    if (product) {
+      if (photoURL) {
+        product.title = productDto.title;
+        product.category = productDto.category;
+        product.price = productDto.price;
+        product.content = productDto.content;
+        product.animate = productDto.animate;
+        product.photoURL = photoURL;
+      } else {
+        product.title = productDto.title;
+        product.category = productDto.category;
+        product.price = productDto.price;
+        product.content = productDto.content;
+        product.animate = productDto.animate;
+      }
+      return product.save();
     }
-    return product.save();
+
   }
   async delete(productId) {
     let product = await this.productModel.findById(productId);

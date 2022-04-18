@@ -20,7 +20,7 @@ export class CommentController {
     }
 
     @UseGuards(JwtAuthGuard)
-    @Delete('remove/:id')
+    @Delete('delete/:id')
     async removeCommentById(@Param('id') id) {
         return this.commentService.deleteComment(id)
     }

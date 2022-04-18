@@ -9,43 +9,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BlogSchema = exports.Blog = void 0;
+exports.ContactSchema = exports.Contact = void 0;
 const mongoose_1 = require("@nestjs/mongoose");
 const mongoose = require("mongoose");
-const user_schemas_1 = require("../../user/schemas/user.schemas");
-let Blog = class Blog {
+let Contact = class Contact {
 };
 __decorate([
     (0, mongoose_1.Prop)(),
     __metadata("design:type", mongoose.Schema.Types.ObjectId)
-], Blog.prototype, "id", void 0);
+], Contact.prototype, "id", void 0);
 __decorate([
     (0, mongoose_1.Prop)({ required: true }),
     __metadata("design:type", String)
-], Blog.prototype, "title", void 0);
+], Contact.prototype, "email", void 0);
 __decorate([
-    (0, mongoose_1.Prop)({ required: true }),
-    __metadata("design:type", String)
-], Blog.prototype, "content", void 0);
-__decorate([
-    (0, mongoose_1.Prop)({ required: true }),
-    __metadata("design:type", String)
-], Blog.prototype, "metaDescription", void 0);
-__decorate([
-    (0, mongoose_1.Prop)(),
-    __metadata("design:type", String)
-], Blog.prototype, "photoURL", void 0);
-__decorate([
-    (0, mongoose_1.Prop)({ type: mongoose.Schema.Types.ObjectId, ref: 'User' }),
-    __metadata("design:type", user_schemas_1.User)
-], Blog.prototype, "createdBy", void 0);
-__decorate([
-    (0, mongoose_1.Prop)(),
+    (0, mongoose_1.Prop)({ default: new Date() }),
     __metadata("design:type", Date)
-], Blog.prototype, "createdAt", void 0);
-Blog = __decorate([
+], Contact.prototype, "createdAt", void 0);
+Contact = __decorate([
     (0, mongoose_1.Schema)()
-], Blog);
-exports.Blog = Blog;
-exports.BlogSchema = mongoose_1.SchemaFactory.createForClass(Blog);
-//# sourceMappingURL=blog.schemas.js.map
+], Contact);
+exports.Contact = Contact;
+exports.ContactSchema = mongoose_1.SchemaFactory.createForClass(Contact);
+//# sourceMappingURL=contact.schemas.js.map

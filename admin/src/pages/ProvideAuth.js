@@ -12,6 +12,10 @@ import Blog from "./blog/Blog";
 import BlogAdd from './blog/BlogAdd';
 import BlogDetail from "./blog/BlogDetail";
 import BlogEdit from "./blog/BlogEdit";
+import Category from "./category/Category";
+import CategoryAdd from "./category/CategoryAdd";
+import CategoryDetail from "./category/CategoryDetail";
+import CategoryEdit from "./category/CategoryEdit";
 import Accordion from "./components/Accordion";
 import Alerts from "./components/Alerts";
 import Badges from "./components/Badges";
@@ -31,31 +35,12 @@ import Tooltips from "./components/Tooltips";
 import DashboardOverview from "./dashboard/DashboardOverview";
 import ChangePassword from "./examples/ChangePassword";
 import Feedback from "./feedback/Feedback";
+import FeedbackUser from "./feedback/FeedbackUser";
 import Settings from './Settings';
 import BootstrapTables from "./tables/BootstrapTables";
 import Transactions from "./Transactions";
 import User from "./user/User";
-import Video from "./video/Video";
-import VideoAdd from "./video/VideoAdd";
-import VideoDetail from "./video/VideoDetail";
-import VideoEdit from "./video/VideoEdit";
 
-import Category from "./category/Category";
-import CategoryAdd from "./category/CategoryAdd";
-import CategoryDetail from "./category/CategoryDetail";
-import CategoryEdit from "./category/CategoryEdit";
-import Attendance from "./attendance/Attendance";
-import AttendanceAdd from "./attendance/AttendanceAdd";
-import AttendanceEdit from "./attendance/AttendanceEdit";
-import AttendanceDetail from "./attendance/AttendanceDetail";
-import Payment from "./payment/Payment";
-import PaymentAdd from "./payment/PaymentAdd";
-import PaymentEdit from "./payment/PaymentEdit";
-import PaymentDetail from "./payment/PaymentDetail";
-import AttendanceUser from "./attendance/AttendanceUser";
-import PaymentUser from "./payment/PaymentUser";
-import PaymentInfor from "./payment/PaymentInfor";
-import FeedbackUser from "./feedback/FeedbackUser";
 
 
 const RouteWithSidebar = ({ component: Component, ...rest }) => {
@@ -131,13 +116,6 @@ export default function ProvideAuth() {
             <RouteWithSidebar exact path={Routes.BlogDetail.path} component={BlogDetail} />
             <RouteWithSidebar exact path={Routes.BlogEdit.path} component={BlogEdit} />
 
-
-            <RouteWithSidebar exact path={Routes.Video.path} component={Video} />
-            <RouteWithSidebar exact path={Routes.VideoAdd.path} component={VideoAdd} />
-            <RouteWithSidebar exact path={Routes.VideoDetail.path} component={VideoDetail} />
-            <RouteWithSidebar exact path={Routes.VideoEdit.path} component={VideoEdit} />
-
-
             <RouteWithSidebar exact path={Routes.Category.path} component={Category} />
             <RouteWithSidebar exact path={Routes.CategoryAdd.path} component={CategoryAdd} />
             <RouteWithSidebar exact path={Routes.CategoryDetail.path} component={CategoryDetail} />
@@ -146,19 +124,6 @@ export default function ProvideAuth() {
             <RouteWithSidebar exact path={Routes.User.path} component={User} />
             <RouteWithSidebar exact path={Routes.Feedback.path} component={Feedback} />
             <RouteWithSidebar exact path={Routes.FeedbackUser.path} component={FeedbackUser} />
-
-            <RouteWithSidebar exact path={Routes.Attendance.path} component={Attendance} />
-            <RouteWithSidebar exact path={Routes.AttendanceAdd.path} component={AttendanceAdd} />
-            <RouteWithSidebar exact path={Routes.AttendanceEdit.path} component={AttendanceEdit} />
-            <RouteWithSidebar exact path={Routes.AttendanceDetail.path} component={AttendanceDetail} />
-            <RouteWithSidebar exact path={Routes.AttendanceUser.path} component={AttendanceUser} />
-
-            <RouteWithSidebar exact path={Routes.Payment.path} component={Payment} />
-            <RouteWithSidebar exact path={Routes.PaymentAdd.path} component={PaymentAdd} />
-            <RouteWithSidebar exact path={Routes.PaymentEdit.path} component={PaymentEdit} />
-            <RouteWithSidebar exact path={Routes.PaymentDetail.path} component={PaymentDetail} />
-            <RouteWithSidebar exact path={Routes.PaymentUser.path} component={PaymentUser} />
-            <RouteWithSidebar exact path={Routes.PaymentInfor.path} component={PaymentInfor} />
 
 
             <Redirect from="/" to="/" />

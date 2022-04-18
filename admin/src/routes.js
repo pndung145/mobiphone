@@ -45,11 +45,6 @@ export const Routes = {
     BlogDetail: { path: "/blog/detail" },
     BlogEdit: { path: "/blog/edit" },
 
-    Video: { path: "/video" },
-    VideoAdd: { path: "/video/add" },
-    VideoDetail: { path: "/video/detail" },
-    VideoEdit: { path: "/video/edit" },
-
     Feedback: { path: "/feedback" },
     FeedbackUser: { path: "/feedback-user" },
 
@@ -59,21 +54,5 @@ export const Routes = {
     CategoryAdd: { path: "/category/add" },
     CategoryDetail: { path: "/category/detail" },
     CategoryEdit: { path: "/category/edit" },
-
-    Attendance: { path: "/attendance" },
-    AttendanceAdd: { path: "/attendance/add" },
-    AttendanceDetail: { path: "/attendance/detail" },
-    AttendanceEdit: { path: "/attendance/edit" },
-    AttendanceUser: { path: "/attendance-user" },
-
-
-    Payment: { path: "/payment" },
-    PaymentAdd: { path: "/payment/add" },
-    PaymentDetail: { path: "/payment/detail" },
-    PaymentEdit: { path: "/payment/edit" },
-    PaymentUser: { path: "/payment-user" },
-    PaymentInfor: { path: "/payment-infor" },
-
-
 
 };

@@ -1,6 +1,7 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 import * as mongoose from 'mongoose';
+import { User } from 'src/user/schemas/user.schemas';
 
 export type BlogDocument = Blog & Document;
 
@@ -21,8 +22,8 @@ export class Blog {
     @Prop()
     photoURL: string;
 
-    @Prop()
-    createdBy: string;
+    @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'User' })
+    createdBy: User;
 
     @Prop()
     createdAt: Date;

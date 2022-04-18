@@ -38,7 +38,7 @@ export class BlogController {
         })
     }))
     async uploadFile(@UploadedFile() file: Express.Multer.File, @Body() body: BlogDto, @Request() req) {
-        return this.blogService.createBlog(body, file.filename, req.user._doc.fullName)
+        return this.blogService.createBlog(body, file.filename, req.user._doc._id)
     }
 
     @UseGuards(JwtAuthGuard)

@@ -1,9 +1,6 @@
 
 import { faFacebookMessenger } from "@fortawesome/free-brands-svg-icons";
 import { faStickyNote } from "@fortawesome/free-regular-svg-icons";
-import { faVideo } from "@fortawesome/free-solid-svg-icons";
-import { faMoneyBill } from "@fortawesome/free-solid-svg-icons";
-import { faClock } from "@fortawesome/free-solid-svg-icons";
 import { faBook, faChartPie, faSignOutAlt, faTimes, faUserAstronaut } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Badge, Button, Dropdown, Image, Nav, Navbar } from '@themesberg/react-bootstrap';
@@ -81,16 +78,7 @@ export default (props = {}) => {
             <Nav className="flex-column pt-3 pt-md-0">
               <NavItem title="Overview" link={Routes.DashboardOverview.path} icon={faChartPie} />
               <NavItem title="Bài viết" icon={faBook} link={Routes.Blog.path} />
-              <NavItem title="Danh mục Video" icon={faStickyNote} link={Routes.Category.path} />
-              {(user.roles === "admin" || user.roles === "superadmin") && <NavItem title="Điểm danh" icon={faClock} link={Routes.Attendance.path} />}
-
-              {(user.roles === "admin" || user.roles === "superadmin") && <NavItem title="Học phí" icon={faMoneyBill} link={Routes.Payment.path} />}
-
-              {(user.roles === "user") && <NavItem title="Điểm danh của tôi" icon={faClock} link={Routes.AttendanceUser.path} />}
-
-              {(user.roles === "user") && <NavItem title="Học phí của tôi" icon={faMoneyBill} link={Routes.PaymentUser.path} />}
-
-              <NavItem title="Video" icon={faVideo} link={Routes.Video.path} />
+              <NavItem title="Danh mục" icon={faStickyNote} link={Routes.Category.path} />
 
               {(user.roles === "superadmin") && <NavItem title="Role User" icon={faUserAstronaut} link={Routes.User.path} />}
 
