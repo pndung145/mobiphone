@@ -11,9 +11,6 @@ export declare class ProductService {
     findById(productId: any): Promise<Product & import("mongoose").Document<any, any, any> & {
         _id: any;
     }>;
-    findByTag(tagId: any): Promise<(Product & import("mongoose").Document<any, any, any> & {
-        _id: any;
-    })[]>;
     findByCreateDate(): Promise<(Product & import("mongoose").Document<any, any, any> & {
         _id: any;
     })[]>;

@@ -19,11 +19,6 @@ export class ProductController {
     return this.productService.findById(productId);
   }
 
-  @Get('tag/:tagId')
-  async getProductByTag(@Param('tagId') tagId) {
-    return this.productService.findByTag(tagId);
-  }
-
   @Get()
   async getProductByDate() {
     return this.productService.findByCreateDate();

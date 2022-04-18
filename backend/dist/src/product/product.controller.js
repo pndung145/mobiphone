@@ -29,9 +29,6 @@ let ProductController = class ProductController {
     async getProductById(productId) {
         return this.productService.findById(productId);
     }
-    async getProductByTag(tagId) {
-        return this.productService.findByTag(tagId);
-    }
     async getProductByDate() {
         return this.productService.findByCreateDate();
     }
@@ -64,13 +61,6 @@ __decorate([
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], ProductController.prototype, "getProductById", null);
-__decorate([
-    (0, common_1.Get)('tag/:tagId'),
-    __param(0, (0, common_1.Param)('tagId')),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object]),
-    __metadata("design:returntype", Promise)
-], ProductController.prototype, "getProductByTag", null);
 __decorate([
     (0, common_1.Get)(),
     __metadata("design:type", Function),

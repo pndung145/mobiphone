@@ -1,4 +1,5 @@
 /// <reference types="multer" />
+/// <reference types="mongoose" />
 import { ProductDto } from './dto/product.dto';
 import { ProductService } from './product.service';
 export declare class ProductController {
@@ -10,9 +11,6 @@ export declare class ProductController {
     getProductById(productId: any): Promise<import("./schemas/product.schemas").Product & import("mongoose").Document<any, any, any> & {
         _id: any;
     }>;
-    getProductByTag(tagId: any): Promise<(import("./schemas/product.schemas").Product & import("mongoose").Document<any, any, any> & {
-        _id: any;
-    })[]>;
     getProductByDate(): Promise<(import("./schemas/product.schemas").Product & import("mongoose").Document<any, any, any> & {
         _id: any;
     })[]>;

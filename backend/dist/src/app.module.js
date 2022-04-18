@@ -13,15 +13,13 @@ const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
 const auth_module_1 = require("./auth/auth.module");
 const blog_module_1 = require("./blog/blog.module");
-const comment_module_1 = require("./comment/comment.module");
-const user_module_1 = require("./user/user.module");
-const feedback_module_1 = require("./feedback/feedback.module");
 const category_module_1 = require("./category/category.module");
-const product_module_1 = require("./product/product.module");
-const order_module_1 = require("./order/order.module");
+const comment_module_1 = require("./comment/comment.module");
+const feedback_module_1 = require("./feedback/feedback.module");
 const order_product_module_1 = require("./order-product/order-product.module");
-const tag_module_1 = require("./tag/tag.module");
-const test_module_1 = require("./test/test.module");
+const order_module_1 = require("./order/order.module");
+const product_module_1 = require("./product/product.module");
+const user_module_1 = require("./user/user.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -36,8 +34,6 @@ AppModule = __decorate([
             product_module_1.ProductModule,
             order_module_1.OrderModule,
             order_product_module_1.OrderProductModule,
-            tag_module_1.TagModule,
-            test_module_1.TestModule
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],
