@@ -32,10 +32,15 @@ import Tables from "./components/Tables";
 import Tabs from "./components/Tabs";
 import Toasts from "./components/Toasts";
 import Tooltips from "./components/Tooltips";
+import Contact from "./contact/Contact";
 import DashboardOverview from "./dashboard/DashboardOverview";
 import ChangePassword from "./examples/ChangePassword";
 import Feedback from "./feedback/Feedback";
 import FeedbackUser from "./feedback/FeedbackUser";
+import Product from "./product/Product";
+import ProductAdd from "./product/ProductAdd";
+import ProductDetail from "./product/ProductDetail";
+import ProductEdit from "./product/ProductEdit";
 import Settings from './Settings';
 import BootstrapTables from "./tables/BootstrapTables";
 import Transactions from "./Transactions";
@@ -124,6 +129,13 @@ export default function ProvideAuth() {
             <RouteWithSidebar exact path={Routes.User.path} component={User} />
             <RouteWithSidebar exact path={Routes.Feedback.path} component={Feedback} />
             <RouteWithSidebar exact path={Routes.FeedbackUser.path} component={FeedbackUser} />
+
+            <RouteWithSidebar exact path={Routes.Product.path} component={Product} />
+            <RouteWithSidebar exact path={Routes.ProductAdd.path} component={ProductAdd} />
+            <RouteWithSidebar exact path={Routes.ProductDetail.path} component={ProductDetail} />
+            <RouteWithSidebar exact path={Routes.ProductEdit.path} component={ProductEdit} />
+
+            <RouteWithSidebar exact path={Routes.Contact.path} component={Contact} />
 
 
             <Redirect from="/" to="/" />

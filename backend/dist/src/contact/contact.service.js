@@ -17,6 +17,7 @@ const common_1 = require("@nestjs/common");
 const mongoose_1 = require("@nestjs/mongoose");
 const mongoose_2 = require("mongoose");
 const contact_schemas_1 = require("./schemas/contact.schemas");
+const nodemailer = require("nodemailer");
 let ContactService = class ContactService {
     constructor(contactModel) {
         this.contactModel = contactModel;
@@ -25,8 +26,38 @@ let ContactService = class ContactService {
         return this.contactModel.find();
     }
     async create(contactDto) {
-        let contact = new this.contactModel({ email: contactDto });
+        let contact = new this.contactModel({ email: contactDto.email });
+        if (contactDto.title) {
+            contact.title = contactDto.title;
+        }
+        if (contactDto.content) {
+            contact.content = contactDto.content;
+        }
+        if (contactDto.name) {
+            contact.name = contactDto.name;
+        }
+        this.sendEmailContact(contact.email);
         return contact.save();
+    }
+    async sendEmailContact(email) {
+        const transport = nodemailer.createTransport({
+            service: "Gmail",
+            auth: {
+                user: 'zenominhhoang@gmail.com',
+                pass: 'Dalecarnegie521985',
+            }
+        });
+        transport.sendMail({
+            from: 'zenominhhoang@gmail.com',
+            to: email,
+            subject: "Đăng ký nhận tin",
+            html: `<h1>Liên hệ</h1>
+            <h4>Xin chào</h4>
+            <p>Cảm ơn bạn đã để lại thông tin liên hệ tới chúng tôi. Khi có sản phẩm mới ra mắt hay có đợt giảm giá
+            ưu đãi mới chúng tôi xin thông tin đến bạn.
+            </p>
+            </div>`,
+        }).catch(err => console.log(err));
     }
     async delete(contactId) {
         let contact = await this.contactModel.findById(contactId);

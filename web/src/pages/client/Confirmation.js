@@ -1,71 +1,88 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import axios from 'axios';
+import moment from 'moment';
+import React, { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux';
+import { Link, useLocation } from 'react-router-dom'
+import { getOrderByIdThunk } from '../../redux/orderSlice';
 
 export default function Confirmation() {
+    const location = useLocation();
+    const orderId = location.state?._id;
+    const [order, setOrder] = useState();
+    const dispatch = useDispatch();
+    const search = async () => {
+        let resp = await dispatch(getOrderByIdThunk(orderId));
+        if (resp) {
+            setOrder(resp)
+        }
+    }
+
+    useEffect(() => {
+        search() // eslint-disable-next-line 
+    }, [orderId]);
+    console.log(order)
+    const [locationData, setLocationData] = useState();
+    let searchLocation = async () => {
+        let responsive = await axios.get('https://provinces.open-api.vn/api/?depth=2');
+        if (responsive.status === 200) {
+            setLocationData(responsive.data)
+        }
+    }
+    useEffect(() => {
+        searchLocation() // eslint-disable-next-line 
+    }, []) // eslint-disable-next-line 
+    let city = locationData?.filter(item => item.code == order?.user?.city)[0] // eslint-disable-next-line 
+    let districtSend = city?.districts?.filter(item => item.code == order?.user?.district)[0]?.name;
+    const currencyFormat = (num) => {
+        return num?.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.') + ' VNĐ'
+    }
     return (
         <section className="confirmation_part padding_top">
             <div className="container">
                 <div className="row">
                     <div className="col-lg-12">
                         <div className="confirmation_tittle">
-                            <span>Thank you. Your order has been received.</span>
+                            <span>Cảm ơn. Đơn hàng của bạn đã được ghi nhận.</span>
+                            <span>Chúng tôi đã gửi thông báo đến email của bạn.</span>
                             <br />
-                            <Link to={'/'}>   Back Home</Link>
+                            <Link to={'/'}>   Quay về trang chủ</Link>
                         </div>
                     </div>
                     <div className="col-lg-6 col-lx-4">
                         <div className="single_confirmation_details">
-                            <h4>order info</h4>
+                            <h4>Đơn hàng</h4>
                             <ul>
                                 <li>
-                                    <p>order number</p><span>: 60235</span>
+                                    <p>Mã đơn hàng</p><span>: {order?.code}</span>
                                 </li>
                                 <li>
-                                    <p>data</p><span>: Oct 03, 2017</span>
+                                    <p>Ngày tháng</p><span>: {moment(order?.createdAt).format("HH:mm DD/MM/YYYY")}</span>
                                 </li>
                                 <li>
-                                    <p>total</p><span>: USD 2210</span>
+                                    <p>Phương thức thanh toán</p><span>: Trả tiền mặt</span>
                                 </li>
-                                <li>
-                                    <p>mayment methord</p><span>: Check payments</span>
-                                </li>
+
                             </ul>
                         </div>
                     </div>
                     <div className="col-lg-6 col-lx-4">
                         <div className="single_confirmation_details">
-                            <h4>Billing Address</h4>
+                            <h4>Thông tin</h4>
                             <ul>
                                 <li>
-                                    <p>Street</p><span>: 56/8</span>
+                                    <p>Họ tên</p><span>: {order?.user?.fullName}</span>
                                 </li>
                                 <li>
-                                    <p>city</p><span>: Los Angeles</span>
+                                    <p>Số điện thoại</p><span>: {order?.user?.phoneNumber}</span>
                                 </li>
                                 <li>
-                                    <p>country</p><span>: United States</span>
+                                    <p>Email</p><span>: {order?.user?.email}</span>
                                 </li>
                                 <li>
-                                    <p>postcode</p><span>: 36952</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="col-lg-6 col-lx-4">
-                        <div className="single_confirmation_details">
-                            <h4>shipping Address</h4>
-                            <ul>
-                                <li>
-                                    <p>Street</p><span>: 56/8</span>
+                                    <p>Tỉnh/ Thành phố</p><span>: {city?.name}</span>
                                 </li>
                                 <li>
-                                    <p>city</p><span>: Los Angeles</span>
-                                </li>
-                                <li>
-                                    <p>country</p><span>: United States</span>
-                                </li>
-                                <li>
-                                    <p>postcode</p><span>: 36952</span>
+                                    <p>Huyện</p><span>: {districtSend}</span>
                                 </li>
                             </ul>
                         </div>
@@ -78,40 +95,26 @@ export default function Confirmation() {
                             <table className="table table-borderless">
                                 <thead>
                                     <tr>
-                                        <th scope="col" colSpan={2}>Product</th>
-                                        <th scope="col">Quantity</th>
-                                        <th scope="col">Total</th>
+                                        <th scope="col" colSpan={2}>Sản phẩm</th>
+                                        <th scope="col">Số lượng</th>
+                                        <th scope="col">Thành tiền</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <th colSpan={2}><span>Pixelstore fresh Blackberry</span></th>
-                                        <th>x02</th>
-                                        <th> <span>$720.00</span></th>
-                                    </tr>
-                                    <tr>
-                                        <th colSpan={2}><span>Pixelstore fresh Blackberry</span></th>
-                                        <th>x02</th>
-                                        <th> <span>$720.00</span></th>
-                                    </tr>
-                                    <tr>
-                                        <th colSpan={2}><span>Pixelstore fresh Blackberry</span></th>
-                                        <th>x02</th>
-                                        <th> <span>$720.00</span></th>
-                                    </tr>
-                                    <tr>
-                                        <th colSpan={3}>Subtotal</th>
-                                        <th> <span>$2160.00</span></th>
-                                    </tr>
-                                    <tr>
-                                        <th colSpan={3}>shipping</th>
-                                        <th><span>flat rate: $50.00</span></th>
-                                    </tr>
+                                    {order?.orderProducts?.map((item, index) => {
+                                        return (
+                                            <tr key={index}>
+                                                <th colSpan={2}><span>{item?.product?.title}</span></th>
+                                                <th>x {item?.amount}</th>
+                                                <th> <span>{currencyFormat(item?.price)}</span></th>
+                                            </tr>
+                                        )
+                                    })}
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <th scope="col" colSpan={3}>Quantity</th>
-                                        <th scope="col">Total</th>
+                                        <th scope="col" colSpan={3}>Tổng tiền</th>
+                                        <th scope="col">{currencyFormat(order?.totalPrice)}</th>
                                     </tr>
                                 </tfoot>
                             </table>

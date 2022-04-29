@@ -1,12 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
-import progressReducer from "./progressSlice";
-import blogReducer from './blogSlice';
 import authReducer from './authSlice';
-import productReducer from './productSlice';
-import dashboardReducer from './dashboardSlice';
-import userReducer from './userSlice';
-import feedbackReducer from './feedbackSlice';
+import blogReducer from './blogSlice';
 import commentReducer from './commentSlice';
+import contactReducer from './contactSlice';
+import dashboardReducer from './dashboardSlice';
+import feedbackReducer from './feedbackSlice';
+import orderReducer from './orderSlice';
+import productReducer from './productSlice';
+import progressReducer from "./progressSlice";
+import userReducer from './userSlice';
 //USE TOOLKIT
 const rootReducer = {
     reducer: {
@@ -17,7 +19,9 @@ const rootReducer = {
         dashboard: dashboardReducer,
         user: userReducer,
         feedback: feedbackReducer,
-        comment: commentReducer
+        comment: commentReducer,
+        contact: contactReducer,
+        order: orderReducer
     },
 };
 

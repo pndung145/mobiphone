@@ -30,19 +30,7 @@ __decorate([
         }
     }),
     __metadata("design:type", Object)
-], Order.prototype, "peopleSend", void 0);
-__decorate([
-    (0, mongoose_1.Prop)({
-        type: {
-            fullName: { type: String }, phoneNumber: { type: String },
-            city: { type: String },
-            email: { type: String },
-            district: { type: String },
-            address: { type: String },
-        }
-    }),
-    __metadata("design:type", Object)
-], Order.prototype, "peopleRecieve", void 0);
+], Order.prototype, "user", void 0);
 __decorate([
     (0, mongoose_1.Prop)({ type: mongoose.Schema.Types.ObjectId }),
     __metadata("design:type", user_schemas_1.User)
@@ -55,26 +43,6 @@ __decorate([
     (0, mongoose_1.Prop)({ type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'OrderProduct' }] }),
     __metadata("design:type", Array)
 ], Order.prototype, "orderProducts", void 0);
-__decorate([
-    (0, mongoose_1.Prop)({
-        type: {
-            year: { type: String }, month: { type: String },
-            day: { type: String },
-            hour: { type: String }
-        }
-    }),
-    __metadata("design:type", Object)
-], Order.prototype, "time", void 0);
-__decorate([
-    (0, mongoose_1.Prop)({
-        type: {
-            titleSend: { type: String }, occasion: { type: String },
-            noteSendToPersonReceive: { type: String },
-            noteSendToPersonAdmin: { type: String }
-        }
-    }),
-    __metadata("design:type", Object)
-], Order.prototype, "message", void 0);
 __decorate([
     (0, mongoose_1.Prop)(),
     __metadata("design:type", Number)

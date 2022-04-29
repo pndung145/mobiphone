@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { addBlog, deleteBlog, detailBlog, editBlog, getBlog } from '../services/blog.service';
+import { addBlog, deleteBlog, detailBlog, editBlog, getBlog, getBlogOther, getNewBlog } from '../services/blog.service';
 
 const initialState = {
     data: null,
@@ -30,6 +30,29 @@ export const getBlogThunk = (dto) => async (dispatch) => {
     try {
         const data = await getBlog(dto);
         dispatch(setData(data))
+        return data;
+    } catch (err) {
+        dispatch(setError(err))
+    }
+    //done
+}
+
+export const getBlogOtherThunk = (dto) => async (dispatch) => {
+
+    try {
+        const data = await getBlogOther(dto);
+        return data;
+    } catch (err) {
+        dispatch(setError(err))
+    }
+    //done
+}
+
+
+export const getNewBlogThunk = () => async (dispatch) => {
+
+    try {
+        const data = await getNewBlog();
         return data;
     } catch (err) {
         dispatch(setError(err))

@@ -84,7 +84,7 @@ function BlogItem({ blog, deleteBlog, routerDetailBlog, routerEditBlog }) {
         }
     }
     return (
-        <Col>
+        <Col className='col-4' >
             <Card style={{ width: '18rem' }} className="mt-4" >
                 <Card.Img variant="top" src={`${SERVER.URL_IMAGE}${blog.photoURL}`} />
                 <Card.Body>

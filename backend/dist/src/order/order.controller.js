@@ -23,6 +23,9 @@ let OrderController = class OrderController {
     async findAll() {
         return this.orderService.findAll();
     }
+    async findById(orderId) {
+        return this.orderService.findById(orderId);
+    }
     async getOrderByAmount(year) {
         return this.orderService.findOrderByAmount(year);
     }
@@ -51,6 +54,13 @@ __decorate([
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], OrderController.prototype, "findAll", null);
+__decorate([
+    (0, common_1.Get)('detail/:orderId'),
+    __param(0, (0, common_1.Param)('orderId')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], OrderController.prototype, "findById", null);
 __decorate([
     (0, common_1.Get)('amount/:year'),
     __param(0, (0, common_1.Param)('year')),

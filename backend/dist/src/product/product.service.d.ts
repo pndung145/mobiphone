@@ -8,6 +8,28 @@ export declare class ProductService {
     findByCategory(categoryId: any): Promise<(Product & import("mongoose").Document<any, any, any> & {
         _id: any;
     })[]>;
+    findNewProducts(): Promise<(Product & import("mongoose").Document<any, any, any> & {
+        _id: any;
+    })[]>;
+    amountProductsByCategory(): Promise<{
+        title: any;
+        id: any;
+        amount: number;
+    }[]>;
+    getAmountProduct(item: any, index: number, productModel: Product[]): Promise<{
+        title: any;
+        id: any;
+        amount: number;
+    }>;
+    findByCategoryAdmin(categoryId: any, skipNumber: any): Promise<{
+        totalPage: number;
+        data: (Product & import("mongoose").Document<any, any, any> & {
+            _id: any;
+        })[];
+    }>;
+    findByCategoryIphone(): Promise<(Product & import("mongoose").Document<any, any, any> & {
+        _id: any;
+    })[]>;
     findById(productId: any): Promise<Product & import("mongoose").Document<any, any, any> & {
         _id: any;
     }>;

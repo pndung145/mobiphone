@@ -14,6 +14,7 @@ export class OrderService {
     async findAll() {
         return this.orderModel.find();
     }
+
     async search(textSearch) {
         let regex = new RegExp(textSearch, "i");
         return await this.orderModel.find({ code: regex }).populate(
@@ -28,6 +29,21 @@ export class OrderService {
                 }
             });
     }
+
+    async findById(id) {
+        return await this.orderModel.findById(id).populate(
+            {
+                path: "orderProducts",
+                select: "amount price",
+                model: "OrderProduct",
+                populate: {
+                    path: "product",
+                    select: "title photoURL",
+                    model: "Product"
+                }
+            });
+    }
+
 
     async findOrderByAmount(year) {
         let dayOfFeburary = 0;

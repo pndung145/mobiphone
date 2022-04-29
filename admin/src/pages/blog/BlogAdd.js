@@ -32,7 +32,7 @@ export default () => {
     return (
         <Container>
             <Row>
-                <h3 className="mb-3">Add Blog</h3>
+                <h3 className="mb-3">Thêm bài viết</h3>
                 <Form>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Title</Form.Label>

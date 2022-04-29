@@ -20,6 +20,16 @@ export class BlogController {
         return this.blogService.loadMore(body.blogId)
     }
 
+    @Get('home/new')
+    async getBlogsNewHome() {
+        return this.blogService.findBlogHome()
+    }
+
+    @Get('other/:blogId')
+    async getBlogsOther(@Param('blogId') blogId) {
+        return this.blogService.other(blogId)
+    }
+
     @Post('search')
     async searchBlogs(@Body() body) {
         return this.blogService.search(body.textSearch)

@@ -40,7 +40,7 @@
                     a {
                         color: #333;
                         text-decoration: none;
-                        letter-spacing: 2px;
+                        letter-spacing: 1px;
                         padding: 5px 12px;
                         border-bottom: 1px solid transparent;
                         &:hover {
@@ -559,4 +559,8 @@
 
 img{
     object-fit: cover;
+}
+
+.post__boxshadow{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }

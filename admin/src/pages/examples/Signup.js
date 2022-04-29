@@ -59,8 +59,8 @@ export default () => {
       setDistrictSelect(responsive.data[0]?.districts?.[0]?.code)
     }
   }
-  let searchDistrict = async (code) => {
-    let cityDistricts = city.filter(item => item.code === code)?.[0];
+  let searchDistrict = async (code) => { // eslint-disable-next-line
+    let cityDistricts = city.filter(item => item.code == code)?.[0];
     setDistrict(cityDistricts.districts);
     setDistrictSelect(cityDistricts.districts?.[0]?.code)
   }

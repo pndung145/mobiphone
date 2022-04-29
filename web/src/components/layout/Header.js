@@ -3,7 +3,7 @@ import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { SERVER } from '../../apis/API';
 import logo from '../../images/logo.png';
@@ -14,7 +14,19 @@ export default () => {
     const [isSearch, setIsSearch] = useState(false);
     const [textSearch, setTextSearch] = useState("");
     const [blog, setBlog] = useState();
+    const [products, setProducts] = useState([]);
+    const cart = JSON.parse(localStorage.getItem("cart"));
 
+    const search = () => {
+        if (cart) {
+            setProducts(cart)
+        } else {
+            setProducts([])
+        }
+    }
+    useEffect(() => {
+        search() // eslint-disable-next-line
+    }, [])
     let getSearch = async () => {
         try {
             let res = await axios.post(`${SERVER.BASE_URL}/blog/search`, {
@@ -89,17 +101,17 @@ export default () => {
                                         </div>
                                     </li>
                                     <li className="menu__item">
-                                        <Link to={'/'} >HOME</Link>
+                                        <Link to={'/'} >Trang chủ</Link>
                                     </li>
                                     <li className="menu__item">
-                                        <Link to={'/blog'} >BLOG</Link>
+                                        <Link to={'/blog'} >Bài viết</Link>
                                     </li>
                                     <li className="menu__item">
-                                        <Link to={'/product'} >PRODUCT</Link>
+                                        <Link to={'/product'} >Sản phẩm</Link>
                                     </li>
                                     <li className="menu__item">
                                         <Link to={'/contact'} >
-                                            CONTACT
+                                            Liên hệ
                                         </Link>
                                     </li>
                                     <li className=" cart">
@@ -107,6 +119,7 @@ export default () => {
                                             <svg style={{ width: '24px', height: '24px' }} viewBox="0 0 24 24">
                                                 <path fill="currentColor" d="M17,18C15.89,18 15,18.89 15,20A2,2 0 0,0 17,22A2,2 0 0,0 19,20C19,18.89 18.1,18 17,18M1,2V4H3L6.6,11.59L5.24,14.04C5.09,14.32 5,14.65 5,15A2,2 0 0,0 7,17H19V15H7.42A0.25,0.25 0 0,1 7.17,14.75C7.17,14.7 7.18,14.66 7.2,14.63L8.1,13H15.55C16.3,13 16.96,12.58 17.3,11.97L20.88,5.5C20.95,5.34 21,5.17 21,5A1,1 0 0,0 20,4H5.21L4.27,2M7,18C5.89,18 5,18.89 5,20A2,2 0 0,0 7,22A2,2 0 0,0 9,20C9,18.89 8.1,18 7,18Z" />
                                             </svg>
+                                            {products.length > 0 && `(${products.length})`}
                                         </Link>
                                     </li>
                                     <li className="menu__item">
@@ -118,16 +131,16 @@ export default () => {
                                             <ul className="sub__item">
                                                 <li className="sub__item--content"
                                                     onClick={() => history.push(Routes.Settings.path)}
-                                                ><FontAwesomeIcon icon={faUserCircle} className="me-2" /> My Profile</li>
+                                                ><FontAwesomeIcon icon={faUserCircle} className="me-2" /> Cá nhân</li>
                                                 <li className="sub__item--content"
                                                     onClick={() => history.push(Routes.ChangePassword.path)}
-                                                ><FontAwesomeIcon icon={faCog} className="me-2" />  Change password</li>
+                                                ><FontAwesomeIcon icon={faCog} className="me-2" />  Thay đổi mật khẩu</li>
                                                 <li className="sub__item--content"
                                                     onClick={() => {
                                                         localStorage.clear();
                                                         history.push(Routes.Signin.path)
                                                     }}
-                                                ><FontAwesomeIcon icon={faSignOutAlt} className="text-danger me-2" /> Log out</li>
+                                                ><FontAwesomeIcon icon={faSignOutAlt} className="text-danger me-2" /> Đăng xuất</li>
                                             </ul>
                                         </div>
                                     </li>

@@ -11,16 +11,21 @@ export class OrderController {
     return this.orderService.findAll();
   }
 
+  @Get('detail/:orderId')
+  async findById(@Param('orderId') orderId) {
+    return this.orderService.findById(orderId);
+  }
+
 
   @Get('amount/:year')
   async getOrderByAmount(@Param('year') year) {
-      return this.orderService.findOrderByAmount(year);
+    return this.orderService.findOrderByAmount(year);
   }
 
 
   @Get('revenue/:year')
   async getOrderByRevenue(@Param('year') year) {
-      return this.orderService.findOrderByRevenue(year);
+    return this.orderService.findOrderByRevenue(year);
   }
 
 

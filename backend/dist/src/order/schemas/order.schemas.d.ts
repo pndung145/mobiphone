@@ -5,7 +5,7 @@ import { OrderProduct } from 'src/order-product/schemas/order-product.schemas';
 export declare type OrderDocument = Order & Document;
 export declare class Order {
     id: mongoose.Schema.Types.ObjectId;
-    peopleSend: {
+    user: {
         fullName: String;
         phoneNumber: String;
         city: String;
@@ -13,29 +13,9 @@ export declare class Order {
         address: String;
         email: string;
     };
-    peopleRecieve: {
-        fullName: String;
-        phoneNumber: String;
-        city: String;
-        district: String;
-        email: String;
-        address: String;
-    };
     createdBy: User;
     code: String;
     orderProducts: OrderProduct[];
-    time: {
-        year: String;
-        month: String;
-        day: String;
-        hour: String;
-    };
-    message: {
-        titleSend: String;
-        occasion: String;
-        noteSendToPersonReceive: String;
-        noteSendToPersonAdmin: String;
-    };
     totalPrice: Number;
     status: String;
     createdAt: Date;

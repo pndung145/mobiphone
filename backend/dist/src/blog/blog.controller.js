@@ -29,6 +29,12 @@ let BlogController = class BlogController {
     async getBlogsLoadMore(body) {
         return this.blogService.loadMore(body.blogId);
     }
+    async getBlogsNewHome() {
+        return this.blogService.findBlogHome();
+    }
+    async getBlogsOther(blogId) {
+        return this.blogService.other(blogId);
+    }
     async searchBlogs(body) {
         return this.blogService.search(body.textSearch);
     }
@@ -64,6 +70,19 @@ __decorate([
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], BlogController.prototype, "getBlogsLoadMore", null);
+__decorate([
+    (0, common_1.Get)('home/new'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], BlogController.prototype, "getBlogsNewHome", null);
+__decorate([
+    (0, common_1.Get)('other/:blogId'),
+    __param(0, (0, common_1.Param)('blogId')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], BlogController.prototype, "getBlogsOther", null);
 __decorate([
     (0, common_1.Post)('search'),
     __param(0, (0, common_1.Body)()),

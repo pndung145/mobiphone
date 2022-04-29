@@ -1,4 +1,3 @@
-/// <reference types="mongoose" />
 import { OrderService } from './order.service';
 export declare class OrderController {
     private orderService;
@@ -6,6 +5,9 @@ export declare class OrderController {
     findAll(): Promise<(import("./schemas/order.schemas").Order & import("mongoose").Document<any, any, any> & {
         _id: any;
     })[]>;
+    findById(orderId: any): Promise<import("./schemas/order.schemas").Order & import("mongoose").Document<any, any, any> & {
+        _id: any;
+    }>;
     getOrderByAmount(year: any): Promise<any[]>;
     getOrderByRevenue(year: any): Promise<any[]>;
     searchOrder(body: any): Promise<(import("./schemas/order.schemas").Order & import("mongoose").Document<any, any, any> & {

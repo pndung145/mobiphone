@@ -13,6 +13,45 @@ export class ProductService {
     return this.productModel.find({ category: categoryId }).populate("category", "title", "Category")
   }
 
+  async findNewProducts() {
+    return this.productModel.find().populate("category", "title", "Category").limit(8)
+  }
+
+
+
+  async amountProductsByCategory() {
+
+    let categories = await this.categoryModel.find();
+    let productModel = await this.productModel.find();
+
+    let resp = await Promise.all(categories.map((item, index) => this.getAmountProduct(item, index, productModel)))
+    return resp;
+  }
+
+  async getAmountProduct(item, index:number, productModel: Product[]) {
+    let products =  productModel.filter(product => product.category.toString() == `${item._id.toString()}`);
+    return {
+      title: item.title,
+      id: item._id,
+      amount: products.length
+    }
+  }
+
+  async findByCategoryAdmin(categoryId, skipNumber) {
+    return this.productModel.find({ category: categoryId }).populate("category", "title", "Category").sort({ createdAt: -1 }).skip(skipNumber).limit(6).exec().then(data => {
+      return this.productModel.find({ category: categoryId }).countDocuments().exec().then(count => {
+        return {
+          totalPage: count,
+          data
+        };
+      })
+    })
+  }
+
+  async findByCategoryIphone() {
+    let category = await this.categoryModel.findOne({ title: "Apple (iPhone)" });
+    return this.productModel.find({ category: category._id }).populate("category", "title", "Category").limit(4);
+  }
 
   async findById(productId) {
     return this.productModel.findById(productId);

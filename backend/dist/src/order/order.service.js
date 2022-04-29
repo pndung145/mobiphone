@@ -39,6 +39,18 @@ let OrderService = class OrderService {
             }
         });
     }
+    async findById(id) {
+        return await this.orderModel.findById(id).populate({
+            path: "orderProducts",
+            select: "amount price",
+            model: "OrderProduct",
+            populate: {
+                path: "product",
+                select: "title photoURL",
+                model: "Product"
+            }
+        });
+    }
     async findOrderByAmount(year) {
         let dayOfFeburary = 0;
         if (year % 4 == 0) {

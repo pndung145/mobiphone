@@ -55,4 +55,11 @@ export const Routes = {
     CategoryDetail: { path: "/category/detail" },
     CategoryEdit: { path: "/category/edit" },
 
+    Product: { path: "/product" },
+    ProductAdd: { path: "/product/add" },
+    ProductDetail: { path: "/product/detail" },
+    ProductEdit: { path: "/product/edit" },
+
+    Contact: { path: '/contact' }
+
 };

@@ -12,6 +12,15 @@ export class Contact {
   @Prop({ required: true })
   email: string;
 
+  @Prop()
+  title: string;
+
+  @Prop()
+  name: string;
+
+  @Prop()
+  content: string;
+
   @Prop({default: new Date()})
   createdAt: Date;
 }

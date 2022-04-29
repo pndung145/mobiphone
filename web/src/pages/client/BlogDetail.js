@@ -1,14 +1,15 @@
-import React from 'react'
-import Blog1 from '../../images/blog/single_blog_1.png'
-import Preview from '../../images/post/preview.png'
-import Next from '../../images/post/next.png'
-import Author from '../../images/blog/author.png'
-import Comment from '../../images/comment/comment_1.png'
-import Post1 from '../../images/post/post_1.png'
-import Post2 from '../../images/post/post_2.png'
-import Header from '../../components/layout/Header'
+import moment from 'moment'
+import React, { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { useHistory, useLocation } from 'react-router-dom'
+import { SERVER } from '../../apis/API'
 import Footer from '../../components/layout/Footer'
+import Header from '../../components/layout/Header'
+import { getBlogOtherThunk } from '../../redux/blogSlice'
+import { Routes } from '../../routes'
 export default function BlogDetail() {
+    const location = useLocation();
+    const blog = location.state;
     return (
         <div>
             <Header />
@@ -18,415 +19,69 @@ export default function BlogDetail() {
                         <div className="col-lg-8 posts-list">
                             <div className="single-post">
                                 <div className="feature-img">
-                                    <img className="img-fluid" src={Blog1} alt="" />
+                                    <img className="img-fluid" src={`${SERVER.URL_IMAGE}${blog?.photoURL}`} alt="" />
                                 </div>
                                 <div className="blog_details">
-                                    <h2>Second divided from form fish beast made every of seas
-                                        all gathered us saying he our
+                                    <h2 dangerouslySetInnerHTML={{ __html: blog?.title }} >
                                     </h2>
                                     <ul className="blog-info-link mt-3 mb-4">
-                                        <li><a href="#"><i className="far fa-user" /> Travel, Lifestyle</a></li>
-                                        <li><a href="#"><i className="far fa-comments" /> 03 Comments</a></li>
+                                        <li><i className="far fa-user" /> {blog?.createdBy?.fullName}</li>
                                     </ul>
-                                    <p className="excert">
-                                        MCSE boot camps have its supporters and its detractors. Some people do not understand why you
-                                        should have to spend money on boot camp when you can get the MCSE study materials yourself at a
-                                        fraction of the camp price. However, who has the willpower
+                                    <p className="excert" dangerouslySetInnerHTML={{ __html: blog?.metaDescription }}>
                                     </p>
-                                    <p>
-                                        MCSE boot camps have its supporters and its detractors. Some people do not understand why you
-                                        should have to spend money on boot camp when you can get the MCSE study materials yourself at a
-                                        fraction of the camp price. However, who has the willpower to actually sit through a
-                                        self-imposed MCSE training. who has the willpower to actually
+                                    <p dangerouslySetInnerHTML={{ __html: blog?.content }}>
+
                                     </p>
-                                    <div className="quote-wrapper">
-                                        <div className="quotes">
-                                            MCSE boot camps have its supporters and its detractors. Some people do not understand why you
-                                            should have to spend money on boot camp when you can get the MCSE study materials yourself at
-                                            a fraction of the camp price. However, who has the willpower to actually sit through a
-                                            self-imposed MCSE training.
-                                        </div>
-                                    </div>
-                                    <p>
-                                        MCSE boot camps have its supporters and its detractors. Some people do not understand why you
-                                        should have to spend money on boot camp when you can get the MCSE study materials yourself at a
-                                        fraction of the camp price. However, who has the willpower
-                                    </p>
-                                    <p>
-                                        MCSE boot camps have its supporters and its detractors. Some people do not understand why you
-                                        should have to spend money on boot camp when you can get the MCSE study materials yourself at a
-                                        fraction of the camp price. However, who has the willpower to actually sit through a
-                                        self-imposed MCSE training. who has the willpower to actually
-                                    </p>
+
                                 </div>
-                            </div>
-                            <div className="navigation-top">
-                                <div className="d-sm-flex justify-content-between text-center">
-                                    <p className="like-info"><span className="align-middle">
-                                        <svg style={{ width: '24px', height: '24px' }} viewBox="0 0 24 24">
-                                            <path fill="currentColor" d="M12.1,18.55L12,18.65L11.89,18.55C7.14,14.24 4,11.39 4,8.5C4,6.5 5.5,5 7.5,5C9.04,5 10.54,6 11.07,7.36H12.93C13.46,6 14.96,5 16.5,5C18.5,5 20,6.5 20,8.5C20,11.39 16.86,14.24 12.1,18.55M16.5,3C14.76,3 13.09,3.81 12,5.08C10.91,3.81 9.24,3 7.5,3C4.42,3 2,5.41 2,8.5C2,12.27 5.4,15.36 10.55,20.03L12,21.35L13.45,20.03C18.6,15.36 22,12.27 22,8.5C22,5.41 19.58,3 16.5,3Z" />
-                                        </svg>
-                                    </span> Lily and 4
-                                        people like this</p>
-                                    <div className="col-sm-4 text-center my-2 my-sm-0">
-                                        {/* <p class="comment-count"><span class="align-middle"><i class="far fa-comment"></i></span> 06 Comments</p> */}
-                                    </div>
-                                    <ul className="social-icons">
-                                        <li><a href="#">
-                                            <svg style={{ width: '24px', height: '24px' }} viewBox="0 0 24 24">
-                                                <path fill="currentColor" d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z" />
-                                            </svg>
-                                        </a>
-                                        </li>
-                                        <li><a href="#">
-                                            <svg style={{ width: '24px', height: '24px' }} viewBox="0 0 24 24">
-                                                <path fill="currentColor" d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z" />
-                                            </svg>
-                                        </a></li>
-                                        <li><a href="#"><i className="fab fa-dribbble" /></a></li>
-                                        <li><a href="#"><i className="fab fa-behance" /></a></li>
-                                    </ul>
-                                </div>
-                                <div className="navigation-area">
-                                    <div className="row">
-                                        <div className="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
-                                            <div className="thumb">
-                                                <a href="#">
-                                                    <img className="img-fluid" src={Preview} alt="" />
-                                                </a>
-                                            </div>
-                                            <div className="arrow">
-                                                <a href="#">
-                                                    <span className="lnr text-white ti-arrow-left" />
-                                                </a>
-                                            </div>
-                                            <div className="detials">
-                                                <p>Prev Post</p>
-                                                <a href="#">
-                                                    <h4>Space The Final Frontier</h4>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div className="col-lg-6 col-md-6 col-12 nav-right flex-row d-flex justify-content-end align-items-center">
-                                            <div className="detials">
-                                                <p>Next Post</p>
-                                                <a href="#">
-                                                    <h4>Telescopes 101</h4>
-                                                </a>
-                                            </div>
-                                            <div className="arrow">
-                                                <a href="#">
-                                                    <span className="lnr text-white ti-arrow-right" />
-                                                </a>
-                                            </div>
-                                            <div className="thumb">
-                                                <a href="#">
-                                                    <img className="img-fluid" src={Next} alt="" />
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="blog-author">
-                                <div className="media align-items-center">
-                                    <img src={Author} alt="" />
-                                    <div className="media-body">
-                                        <a href="#">
-                                            <h4>Harvard milan</h4>
-                                        </a>
-                                        <p>Second divided from form fish beast made. Every of seas all gathered use saying you're, he
-                                            our dominion twon Second divided from</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="comments-area">
-                                <h4>05 Comments</h4>
-                                <div className="comment-list">
-                                    <div className="single-comment justify-content-between d-flex">
-                                        <div className="user justify-content-between d-flex">
-                                            <div className="thumb">
-                                                <img src={Comment} alt="" />
-                                            </div>
-                                            <div className="desc">
-                                                <p className="comment">
-                                                    Multiply sea night grass fourth day sea lesser rule open subdue female fill which them
-                                                    Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser
-                                                </p>
-                                                <div className="d-flex justify-content-between">
-                                                    <div className="d-flex align-items-center">
-                                                        <h5>
-                                                            <a href="#">Emilly Blunt</a>
-                                                        </h5>
-                                                        <p className="date">December 4, 2017 at 3:12 pm </p>
-                                                    </div>
-                                                    <div className="reply-btn">
-                                                        <a href="#" className="btn-reply text-uppercase">reply</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="comment-list">
-                                    <div className="single-comment justify-content-between d-flex">
-                                        <div className="user justify-content-between d-flex">
-                                            <div className="thumb">
-                                                <img src={Comment} alt="" />
-                                            </div>
-                                            <div className="desc">
-                                                <p className="comment">
-                                                    Multiply sea night grass fourth day sea lesser rule open subdue female fill which them
-                                                    Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser
-                                                </p>
-                                                <div className="d-flex justify-content-between">
-                                                    <div className="d-flex align-items-center">
-                                                        <h5>
-                                                            <a href="#">Emilly Blunt</a>
-                                                        </h5>
-                                                        <p className="date">December 4, 2017 at 3:12 pm </p>
-                                                    </div>
-                                                    <div className="reply-btn">
-                                                        <a href="#" className="btn-reply text-uppercase">reply</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="comment-list">
-                                    <div className="single-comment justify-content-between d-flex">
-                                        <div className="user justify-content-between d-flex">
-                                            <div className="thumb">
-                                                <img src={Comment} alt="" />
-                                            </div>
-                                            <div className="desc">
-                                                <p className="comment">
-                                                    Multiply sea night grass fourth day sea lesser rule open subdue female fill which them
-                                                    Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser
-                                                </p>
-                                                <div className="d-flex justify-content-between">
-                                                    <div className="d-flex align-items-center">
-                                                        <h5>
-                                                            <a href="#">Emilly Blunt</a>
-                                                        </h5>
-                                                        <p className="date">December 4, 2017 at 3:12 pm </p>
-                                                    </div>
-                                                    <div className="reply-btn">
-                                                        <a href="#" className="btn-reply text-uppercase">reply</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="comment-form">
-                                <h4>Leave a Reply</h4>
-                                <form className="form-contact comment_form" action="#" id="commentForm">
-                                    <div className="row">
-                                        <div className="col-12">
-                                            <div className="form-group">
-                                                <textarea className="form-control w-100" name="comment" id="comment" cols={30} rows={9} placeholder="Write Comment" defaultValue={""} />
-                                            </div>
-                                        </div>
-                                        <div className="col-sm-6">
-                                            <div className="form-group">
-                                                <input className="form-control" name="name" id="name" type="text" placeholder="Name" />
-                                            </div>
-                                        </div>
-                                        <div className="col-sm-6">
-                                            <div className="form-group">
-                                                <input className="form-control" name="email" id="email" type="email" placeholder="Email" />
-                                            </div>
-                                        </div>
-                                        <div className="col-12">
-                                            <div className="form-group">
-                                                <input className="form-control" name="website" id="website" type="text" placeholder="Website" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="form-group mt-3">
-                                        <a href="#" className="btn_3 button-contactForm">Send Message</a>
-                                    </div>
-                                </form>
                             </div>
                         </div>
-                        <div className="col-lg-4">
-                            <div className="blog_right_sidebar">
-                                <aside className="single_sidebar_widget search_widget">
-                                    <form action="#">
-                                        <div className="form-group">
-                                            <div className="input-group mb-3">
-                                                <input type="text" className="form-control" placeholder="Search Keyword" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Keyword'" />
-                                                <div className="input-group-append">
-                                                    <button className="btn" type="button"><i className="ti-search" /></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <button className="button rounded-0 primary-bg text-white w-100 btn_1" type="submit">Search</button>
-                                    </form>
-                                </aside>
-                                <aside className="single_sidebar_widget post_category_widget">
-                                    <h4 className="widget_title">Category</h4>
-                                    <ul className="list cat-list">
-                                        <li>
-                                            <a href="#" className="d-flex">
-                                                <p>Resaurant food</p>
-                                                <p>(37)</p>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" className="d-flex">
-                                                <p>Travel news</p>
-                                                <p>(10)</p>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" className="d-flex">
-                                                <p>Modern technology</p>
-                                                <p>(03)</p>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" className="d-flex">
-                                                <p>Product</p>
-                                                <p>(11)</p>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" className="d-flex">
-                                                <p>Inspiration</p>
-                                                <p>(21)</p>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" className="d-flex">
-                                                <p>Health Care</p>
-                                                <p>(21)</p>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </aside>
-                                <aside className="single_sidebar_widget popular_post_widget">
-                                    <h3 className="widget_title">Recent Post</h3>
-                                    <div className="media post_item">
-                                        <img src={Post1} alt="post" />
-                                        <div className="media-body">
-                                            <a href="single-blog.html">
-                                                <h3>From life was you fish...</h3>
-                                            </a>
-                                            <p>January 12, 2019</p>
-                                        </div>
-                                    </div>
-                                    <div className="media post_item">
-                                        <img src={Post1} alt="post" />
-                                        <div className="media-body">
-                                            <a href="single-blog.html">
-                                                <h3>The Amazing Hubble</h3>
-                                            </a>
-                                            <p>02 Hours ago</p>
-                                        </div>
-                                    </div>
-                                    <div className="media post_item">
-                                        <img src={Post1} alt="post" />
-                                        <div className="media-body">
-                                            <a href="single-blog.html">
-                                                <h3>Astronomy Or Astrology</h3>
-                                            </a>
-                                            <p>03 Hours ago</p>
-                                        </div>
-                                    </div>
-                                    <div className="media post_item">
-                                        <img src={Post1} alt="post" />
-                                        <div className="media-body">
-                                            <a href="single-blog.html">
-                                                <h3>Asteroids telescope</h3>
-                                            </a>
-                                            <p>01 Hours ago</p>
-                                        </div>
-                                    </div>
-                                </aside>
-                                <aside className="single_sidebar_widget tag_cloud_widget">
-                                    <h4 className="widget_title">Tag Clouds</h4>
-                                    <ul className="list">
-                                        <li>
-                                            <a href="#">project</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">love</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">technology</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">travel</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">restaurant</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">life style</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">design</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">illustration</a>
-                                        </li>
-                                    </ul>
-                                </aside>
-                                <aside className="single_sidebar_widget instagram_feeds">
-                                    <h4 className="widget_title">Instagram Feeds</h4>
-                                    <ul className="instagram_row flex-wrap">
-                                        <li>
-                                            <a href="#">
-                                                <img className="img-fluid" src={Post2} alt="" />
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img className="img-fluid" src={Post2} alt="" />
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img className="img-fluid" src={Post2} alt="" />
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img className="img-fluid" src={Post2} alt="" />
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img className="img-fluid" src={Post2} alt="" />
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img className="img-fluid" src={Post2} alt="" />
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </aside>
-                                <aside className="single_sidebar_widget newsletter_widget">
-                                    <h4 className="widget_title">Newsletter</h4>
-                                    <form action="#">
-                                        <div className="form-group">
-                                            <input type="email" className="form-control" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email'" placeholder="Enter email" required />
-                                        </div>
-                                        <button className="button rounded-0 primary-bg text-white w-100 btn_1" type="submit">Subscribe</button>
-                                    </form>
-                                </aside>
-                            </div>
-                        </div>
+                        <BlogOther blogId={blog?._id} />
                     </div>
                 </div>
             </section>
             <Footer />
         </div>
+    )
+}
 
+function BlogOther({ blogId }) {
+    const [blogs, setBlogs] = useState();
+    const dispatch = useDispatch();
+    const history = useHistory();
+    const search = async () => {
+        let resp = await dispatch(getBlogOtherThunk(blogId));
+        if (resp) {
+            setBlogs(resp)
+        }
+    }
+    useEffect(() => {
+        search() // eslint-disable-next-line
+    }, [blogId])
+    return (
+        <div className="col-lg-4 mt-4">
+            <div className="blog_right_sidebar">
+                <aside className="single_sidebar_widget popular_post_widget" style={{ padding: 0 }} >
+                    <h3 className="widget_title">Bài viết khác</h3>
+                    {blogs && blogs?.map((item, index) => {
+                        return (
+                            <div className="media post_item post__boxshadow" key={index} style={{ cursor: 'pointer' }}
+                                onClick={() => {
+                                    history.push({
+                                        pathname: Routes.BlogDetail.path,
+                                        state: item
+                                    })
+                                }} >
+                                <img src={`${SERVER.URL_IMAGE}${item?.photoURL}`} alt="post" />
+                                <div className="media-body mt-2" style={{ padding: 15 }} >
+                                    <h3>{item?.title}</h3>
+                                    <p>{moment(item?.createdAt).format("HH:mm DD/MM/YYYY")}</p>
+                                </div>
+                            </div>
+                        )
+                    })}
+                </aside>
+            </div>
+        </div>
     )
 }

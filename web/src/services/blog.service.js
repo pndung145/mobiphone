@@ -5,6 +5,18 @@ export const getBlog = async (dto) => {
     return response
 };
 
+
+export const getNewBlog = async () => {
+    let response = await publicGetApi(`/blog/home/new`)
+    return response
+};
+
+export const getBlogOther = async (dto) => {
+    let response = await publicGetApi(`/blog/other/${dto}`)
+    return response
+};
+
+
 export const addBlog = async (data) => {
     let response = await privatePostApi('/blog/create', data)
     return response

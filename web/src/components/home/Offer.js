@@ -1,34 +1,70 @@
-import React from 'react'
-import OfferImg from '../../images/home/iphone2.png'
+import React from 'react';
+import { Controller, useForm } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
+import { useToasts } from 'react-toast-notifications';
+import OfferImg from '../../images/home/iphone2.png';
+import { addContactThunk } from '../../redux/contactSlice';
 
 export default function Offer() {
+    const dispatch = useDispatch();
+    const { control, handleSubmit, reset } = useForm();
+    let { addToast } = useToasts();
+    const sumbitContact = async (form) => {
+        let resp = await dispatch(addContactThunk({
+            email: form.email
+        }));
+        if (resp) {
+            addToast("Đăng ký nhận tin thành công!", { appearance: 'success', autoDismiss: 1000 });
+            reset()
+        }
+    }
     return (
-        <section class="our_offer section_padding">
-            <div class="container">
-                <div class="row align-items-center justify-content-between">
-                    <div class="col-lg-6 col-md-6">
-                        <div class="offer_img">
+        <section className="our_offer section_padding">
+            <div className="container">
+                <div className="row align-items-center justify-content-between">
+                    <div className="col-lg-6 col-md-6">
+                        <div className="offer_img">
                             <img src={OfferImg} alt="" />
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="offer_text">
+                    <div className="col-lg-6 col-md-6">
+                        <div className="offer_text">
                             <h2>Weekly Sale on
                                 60% Off All Products</h2>
-                            <div class="date_countdown">
+                            <div className="date_countdown">
                                 <div id="timer">
-                                    <div id="days" class="date"></div>
-                                    <div id="hours" class="date"></div>
-                                    <div id="minutes" class="date"></div>
-                                    <div id="seconds" class="date"></div>
+                                    <div id="days" className="date"></div>
+                                    <div id="hours" className="date"></div>
+                                    <div id="minutes" className="date"></div>
+                                    <div id="seconds" className="date"></div>
                                 </div>
                             </div>
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="enter email address"
-                                    aria-label="Recipient's username" aria-describedby="basic-addon2" />
-                                    <div class="input-group-append">
-                                        <a href="#" class="input-group-text btn_2" id="basic-addon2">book now</a>
-                                    </div>
+                            <div className="input-group">
+                                <Controller
+                                    control={control}
+                                    name="email"
+                                    render={({
+                                        field: { onChange, onBlur, value }
+                                    }) => (
+                                        <input type="text" className="form-control" placeholder="enter email address"
+                                            aria-label="Recipient's username" aria-describedby="basic-addon2"
+                                            onBlur={onBlur}
+                                            onChange={e => onChange(e.target.value)}
+                                            value={value}
+                                        />
+                                    )}
+                                    rules={{
+                                        required: true
+                                    }}
+                                    defaultValue=""
+                                />
+
+                                <div className="input-group-append"
+                                    onClick={handleSubmit(sumbitContact)}
+                                    style={{ cursor: 'pointer' }}
+                                >
+                                    <div className="input-group-text btn_2">Đăng ký</div>
+                                </div>
                             </div>
                         </div>
                     </div>

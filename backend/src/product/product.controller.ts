@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Param, Post, UploadedFile, UseGuards, UseInterceptors } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Query, UploadedFile, UseGuards, UseInterceptors } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { diskStorage } from 'multer';
 import { JwtAuthGuard } from 'src/auth/guard/jwt-auth.guard';
@@ -12,6 +12,27 @@ export class ProductController {
   @Get('/:categoryId')
   async getProduct(@Param('categoryId') categoryId) {
     return this.productService.findByCategory(categoryId);
+  }
+
+  @Get('home/iphone')
+  async getProductHome() {
+    return this.productService.findByCategoryIphone();
+  }
+
+  @Get('category/amount')
+  async getProducAmountCategory() {
+    return this.productService.amountProductsByCategory();
+  }
+
+  @Get('home/new')
+  async getNewProductsHome() {
+    return this.productService.findNewProducts();
+  }
+
+
+  @Get('admin/skip?')
+  async getProductAdmin(@Query('categoryId') categoryId, @Query('skipNumber') skipNumber) {
+    return this.productService.findByCategoryAdmin(categoryId, skipNumber);
   }
 
   @Get('detail/:productId')

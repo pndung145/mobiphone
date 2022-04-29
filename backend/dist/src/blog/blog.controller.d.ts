@@ -13,6 +13,12 @@ export declare class BlogController {
     getBlogsLoadMore(body: any): Promise<(import("./schemas/blog.schemas").Blog & import("mongoose").Document<any, any, any> & {
         _id: any;
     })[]>;
+    getBlogsNewHome(): Promise<(import("./schemas/blog.schemas").Blog & import("mongoose").Document<any, any, any> & {
+        _id: any;
+    })[]>;
+    getBlogsOther(blogId: any): Promise<(import("./schemas/blog.schemas").Blog & import("mongoose").Document<any, any, any> & {
+        _id: any;
+    })[]>;
     searchBlogs(body: any): Promise<(import("./schemas/blog.schemas").Blog & import("mongoose").Document<any, any, any> & {
         _id: any;
     })[]>;

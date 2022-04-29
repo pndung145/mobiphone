@@ -7,6 +7,12 @@ export declare class BlogService {
     loadMore(blogId: any): Promise<(Blog & import("mongoose").Document<any, any, any> & {
         _id: any;
     })[]>;
+    other(blogId: any): Promise<(Blog & import("mongoose").Document<any, any, any> & {
+        _id: any;
+    })[]>;
+    findBlogHome(): Promise<(Blog & import("mongoose").Document<any, any, any> & {
+        _id: any;
+    })[]>;
     findAll(skipNumber: any): Promise<{
         totalPage: number;
         data: (Blog & import("mongoose").Document<any, any, any> & {

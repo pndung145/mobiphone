@@ -12,10 +12,11 @@ export class ContactController {
 
   @Post('create')
   async create(@Body() body) {
-    return this.contactService.create(body.email)
+    console.log(body)
+    return this.contactService.create(body)
   }
 
-  @Delete('delete/:contactId')
+  @Post('delete/:contactId')
   async delete(@Param('contactId') contactId) {
     return this.contactService.delete(contactId);
   }

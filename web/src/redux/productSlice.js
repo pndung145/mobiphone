@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { addProduct, deleteProduct, detailProduct, editProduct, getProduct } from '../services/product.service';
+import { addProduct, deleteProduct, detailProduct, editProduct, getAmountProductCategory, getNewProduct, getProduct, getProductByCategorySkipAdmin, getProductById, getProductIphone } from '../services/product.service';
 
 const initialState = {
     data: null,
@@ -37,6 +37,63 @@ export const getProductThunk = () => async (dispatch) => {
     }
     //done
 }
+
+
+export const getProductByIdThunk = (dto) => async (dispatch) => {
+    try {
+        const data = await getProductById(dto);
+        return data;
+    } catch (err) {
+        dispatch(setError(err))
+    }
+    //done
+}
+
+export const getProductThunkAdminSkip = (categoryId,skipNumber) => async (dispatch) => {
+
+    try {
+        const data = await getProductByCategorySkipAdmin(categoryId,skipNumber);
+        return data;
+    } catch (err) {
+        dispatch(setError(err))
+    }
+    //done
+}
+
+
+export const getProductIphoneThunk = () => async (dispatch) => {
+
+    try {
+        const data = await getProductIphone();
+        return data;
+    } catch (err) {
+        dispatch(setError(err))
+    }
+    //done
+}
+
+
+export const getNewProductThunk = () => async (dispatch) => {
+    try {
+        const data = await getNewProduct();
+        return data;
+    } catch (err) {
+        dispatch(setError(err))
+    }
+    //done
+}
+
+
+export const getAmountProductCategoryThunk = () => async (dispatch) => {
+    try {
+        const data = await getAmountProductCategory();
+        return data;
+    } catch (err) {
+        dispatch(setError(err))
+    }
+    //done
+}
+
 
 export const addProductThunk = (data) => async (dispatch) => {
     try {

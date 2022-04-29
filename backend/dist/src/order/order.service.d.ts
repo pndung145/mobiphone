@@ -12,6 +12,9 @@ export declare class OrderService {
     search(textSearch: any): Promise<(Order & import("mongoose").Document<any, any, any> & {
         _id: any;
     })[]>;
+    findById(id: any): Promise<Order & import("mongoose").Document<any, any, any> & {
+        _id: any;
+    }>;
     findOrderByAmount(year: any): Promise<any[]>;
     findOrderByRevenue(year: any): Promise<any[]>;
     findByUser(user: any): Promise<(Order & import("mongoose").Document<any, any, any> & {

@@ -9,6 +9,7 @@ export declare class ContactService {
     create(contactDto: any): Promise<Contact & import("mongoose").Document<any, any, any> & {
         _id: any;
     }>;
+    sendEmailContact(email: string): Promise<void>;
     delete(contactId: any): Promise<Contact & import("mongoose").Document<any, any, any> & {
         _id: any;
     }>;

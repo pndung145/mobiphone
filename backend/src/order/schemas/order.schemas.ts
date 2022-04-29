@@ -20,31 +20,13 @@ export class Order {
       address: { type: String },
     }
   })
-  peopleSend: {
+  user: {
     fullName: String,
     phoneNumber: String,
     city: String,
     district: String,
     address: String,
     email: string
-  }
-
-  @Prop({
-    type: {
-      fullName: { type: String }, phoneNumber: { type: String },
-      city: { type: String },
-      email: { type: String },
-      district: { type: String },
-      address: { type: String },
-    }
-  })
-  peopleRecieve: {
-    fullName: String,
-    phoneNumber: String,
-    city: String,
-    district: String,
-    email: String,
-    address: String
   }
 
   @Prop({ type: mongoose.Schema.Types.ObjectId })
@@ -55,34 +37,6 @@ export class Order {
 
   @Prop({ type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'OrderProduct' }] })
   orderProducts: OrderProduct[]
-
-  @Prop({
-    type: {
-      year: { type: String }, month: { type: String },
-      day: { type: String },
-      hour: { type: String }
-    }
-  })
-  time: {
-    year: String,
-    month: String,
-    day: String,
-    hour: String
-  }
-
-  @Prop({
-    type: {
-      titleSend: { type: String }, occasion: { type: String },
-      noteSendToPersonReceive: { type: String },
-      noteSendToPersonAdmin: { type: String }
-    }
-  })
-  message: {
-    titleSend: String,
-    occasion: String,
-    noteSendToPersonReceive: String,
-    noteSendToPersonAdmin: String
-  }
 
   @Prop()
   totalPrice: Number

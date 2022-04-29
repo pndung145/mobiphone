@@ -6,7 +6,7 @@ import { Controller, useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { Link, useHistory } from 'react-router-dom';
 import { useToasts } from "react-toast-notifications";
-import BgImage from "../../assets/img/signin.jpg";
+import BgImage from "../../images/home/iphone2.png";
 import { loginThunk } from "../../redux/authSlice";
 import { Routes } from "../../routes";
 export default () => {
@@ -31,12 +31,12 @@ export default () => {
 
   return (
     <>
-      <main  style={{ backgroundImage: `url(${BgImage})` }}>
+      <main  style={{ backgroundImage: `url(${BgImage})`,backgroundPosition:'right',backgroundRepeat:'no-repeat',backgroundSize:'contain' }}>
         <section className="d-flex align-items-center my-5 mt-lg-6 mb-lg-5">
           <Container>
-            <Row className="justify-content-center form-bg-image" >
-              <Col xs={12} className="d-flex align-items-center justify-content-center">
-                <div className="bg-white shadow-soft border rounded border-light p-4 p-lg-5 w-100 fmxw-500">
+            <Row className=" form-bg-image" >
+              <Col xs={12} className="d-flex align-items-center">
+                <div className="bg-white shadow-soft border rounded border-light p-4 p-lg-5 w-100 fmxw-400">
                   <div className="text-center text-md-center mb-4 mt-md-0">
                     <h3 className="mb-0">Sign in</h3>
                   </div>

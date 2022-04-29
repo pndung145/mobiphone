@@ -23,7 +23,8 @@ let ContactController = class ContactController {
         return this.contactService.findAll();
     }
     async create(body) {
-        return this.contactService.create(body.email);
+        console.log(body);
+        return this.contactService.create(body);
     }
     async delete(contactId) {
         return this.contactService.delete(contactId);
@@ -43,7 +44,7 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], ContactController.prototype, "create", null);
 __decorate([
-    (0, common_1.Delete)('delete/:contactId'),
+    (0, common_1.Post)('delete/:contactId'),
     __param(0, (0, common_1.Param)('contactId')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),

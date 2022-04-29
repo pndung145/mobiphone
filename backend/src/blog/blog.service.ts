@@ -13,8 +13,16 @@ export class BlogService {
         return this.blogModel.find({ '_id': { $ne: blogId } })
     }
 
+    async other(blogId) {
+        return this.blogModel.find({ '_id': { $ne: blogId } }).sort({ createdAt: -1 }).limit(4);
+    }
+
+    async findBlogHome() {
+        return this.blogModel.find().sort({ createdAt: -1 }).limit(4);
+    }
+
     async findAll(skipNumber) {
-        return this.blogModel.find({}).sort({ createdAt: -1 }).skip(skipNumber).limit(6).exec().then(data => {
+        return this.blogModel.find({}).populate("createdBy", "fullName", "User").sort({ createdAt: -1 }).skip(skipNumber).limit(6).exec().then(data => {
             return this.blogModel.countDocuments().exec().then(count => {
                 return {
                     totalPage: count,

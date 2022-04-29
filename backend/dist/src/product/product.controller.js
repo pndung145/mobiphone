@@ -26,6 +26,18 @@ let ProductController = class ProductController {
     async getProduct(categoryId) {
         return this.productService.findByCategory(categoryId);
     }
+    async getProductHome() {
+        return this.productService.findByCategoryIphone();
+    }
+    async getProducAmountCategory() {
+        return this.productService.amountProductsByCategory();
+    }
+    async getNewProductsHome() {
+        return this.productService.findNewProducts();
+    }
+    async getProductAdmin(categoryId, skipNumber) {
+        return this.productService.findByCategoryAdmin(categoryId, skipNumber);
+    }
     async getProductById(productId) {
         return this.productService.findById(productId);
     }
@@ -54,6 +66,32 @@ __decorate([
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], ProductController.prototype, "getProduct", null);
+__decorate([
+    (0, common_1.Get)('home/iphone'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], ProductController.prototype, "getProductHome", null);
+__decorate([
+    (0, common_1.Get)('category/amount'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], ProductController.prototype, "getProducAmountCategory", null);
+__decorate([
+    (0, common_1.Get)('home/new'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], ProductController.prototype, "getNewProductsHome", null);
+__decorate([
+    (0, common_1.Get)('admin/skip?'),
+    __param(0, (0, common_1.Query)('categoryId')),
+    __param(1, (0, common_1.Query)('skipNumber')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object, Object]),
+    __metadata("design:returntype", Promise)
+], ProductController.prototype, "getProductAdmin", null);
 __decorate([
     (0, common_1.Get)('detail/:productId'),
     __param(0, (0, common_1.Param)('productId')),

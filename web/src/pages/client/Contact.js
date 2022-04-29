@@ -1,11 +1,31 @@
-import React from 'react'
-import Footer from '../../components/layout/Footer'
-import Header from '../../components/layout/Header'
+import React from 'react';
+import { Controller, useForm } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
+import { useToasts } from 'react-toast-notifications';
+import Footer from '../../components/layout/Footer';
+import Header from '../../components/layout/Header';
+import { addContactThunk } from '../../redux/contactSlice';
 
 export default function Contact() {
+    const dispatch = useDispatch();
+    const { control, handleSubmit, reset } = useForm();
+    let { addToast } = useToasts();
+    const sumbitContact = async (form) => {
+        let resp = await dispatch(addContactThunk({
+            email: form.email,
+            title: form.title,
+            name: form.name,
+            content: form.content
+        }));
+        if (resp) {
+            addToast("Đăng ký nhận tin thành công!", { appearance: 'success', autoDismiss: 1000 });
+            reset()
+        }
+    }
     return (
         <div>
             <Header />
+
             <section className="contact-section padding_top">
                 <div className="container">
                     <div className="row">
@@ -17,27 +37,96 @@ export default function Contact() {
                                 <div className="row">
                                     <div className="col-12">
                                         <div className="form-group">
-                                            <textarea className="form-control w-100" name="message" id="message" cols={30} rows={9} onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'" placeholder="Enter Message" defaultValue={""} />
+                                            <Controller
+                                                control={control}
+                                                name="content"
+                                                render={({
+                                                    field: { onChange, onBlur, value }
+                                                }) => (
+                                                    <textarea className="form-control w-100" name="message" id="message" cols={30} rows={9}
+                                                        placeholder="Enter Message"
+                                                        onChange={e => onChange(e.target.value)}
+                                                        onBlur={onBlur}
+                                                        value={value}
+                                                    />
+                                                )}
+                                                rules={{
+                                                    required: true
+                                                }}
+                                                defaultValue=""
+                                            />
+
                                         </div>
                                     </div>
                                     <div className="col-sm-6">
                                         <div className="form-group">
-                                            <input className="form-control" name="name" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder="Enter your name" />
+                                            <Controller
+                                                control={control}
+                                                name="name"
+                                                render={({
+                                                    field: { onChange, onBlur, value }
+                                                }) => (
+                                                    <input className="form-control" name="name" id="name" type="text"
+                                                        placeholder="Enter your name"
+                                                        onChange={e => onChange(e.target.value)}
+                                                        onBlur={onBlur}
+                                                        value={value}
+                                                    />
+                                                )}
+                                                rules={{
+                                                    required: true
+                                                }}
+                                                defaultValue=""
+                                            />
                                         </div>
                                     </div>
                                     <div className="col-sm-6">
                                         <div className="form-group">
-                                            <input className="form-control" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" placeholder="Enter email address" />
+                                            <Controller
+                                                control={control}
+                                                name="email"
+                                                render={({
+                                                    field: { onChange, onBlur, value }
+                                                }) => (
+                                                    <input className="form-control" name="email" id="email" type="email" placeholder="Enter email address"
+                                                        onChange={e => onChange(e.target.value)}
+                                                        onBlur={onBlur}
+                                                        value={value}
+                                                    />
+                                                )}
+                                                rules={{
+                                                    required: true
+                                                }}
+                                                defaultValue=""
+                                            />
                                         </div>
                                     </div>
                                     <div className="col-12">
                                         <div className="form-group">
-                                            <input className="form-control" name="subject" id="subject" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder="Enter Subject" />
+                                            <Controller
+                                                control={control}
+                                                name="title"
+                                                render={({
+                                                    field: { onChange, onBlur, value }
+                                                }) => (
+                                                    <input className="form-control" name="subject" id="subject" type="text" placeholder="Enter Subject"
+                                                        onChange={e => onChange(e.target.value)}
+                                                        onBlur={onBlur}
+                                                        value={value}
+                                                    />
+                                                )}
+                                                rules={{
+                                                    required: true
+                                                }}
+                                                defaultValue=""
+                                            />
                                         </div>
                                     </div>
                                 </div>
-                                <div className="form-group mt-3">
-                                    <a href="#" className="btn_3 button-contactForm">Send Message</a>
+                                <div className="form-group mt-3"
+                                    onClick={handleSubmit(sumbitContact)}
+                                    style={{ cursor: 'pointer' }}>
+                                    <div className="btn_3 button-contactForm">Send Message</div>
                                 </div>
                             </form>
                         </div>
