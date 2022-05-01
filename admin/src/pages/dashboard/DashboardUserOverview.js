@@ -1,10 +1,7 @@
 import { Col, Row } from '@themesberg/react-bootstrap';
 import React from "react";
-import DashboardOrderByAmount from './DashboardOrderByAmount';
-import DashboardOrderByRevenue from './DashboardOrderByRevenue';
-import OrderOverview from './OrderOverview';
-import OrderUserOverview from './OrderUserOverview';
-import UserOverview from './UserOverview';
+import DashboardOrderByAmountByUser from './DashboardOrderByAmountByUser';
+import DashboardOrderByRevenueByUser from './DashboardOrderByRevenueByUser';
 
 
 export default () => {
@@ -19,13 +16,11 @@ export default () => {
             percentage={10.57}
           />
         </Col> */}
-        {(user.roles === "superadmin" || user.roles === "admin") && <UserOverview />}
-        {(user.roles === "superadmin" || user.roles === "admin") ?  <OrderOverview /> : <OrderUserOverview /> }
 
-        {(user.roles === "superadmin" || user.roles === "admin") && <DashboardOrderByAmount />}
-        {(user.roles === "superadmin" || user.roles === "admin") && <DashboardOrderByRevenue />}
+        <DashboardOrderByAmountByUser />
+        {/* {(user.roles === "superadmin" || user.roles === "admin") && <DashboardOrderByAmount />} */}
+        <DashboardOrderByRevenueByUser />
 
-       
       </Row>
 
       <Row>

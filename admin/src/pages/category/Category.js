@@ -1,6 +1,5 @@
 import { faEdit, faEye, faTrashAlt } from '@fortawesome/free-regular-svg-icons';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
-import { faEllipsisH } from '@fortawesome/free-solid-svg-icons';
+import { faEllipsisH, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Button, ButtonGroup, Card, Col, Container, Dropdown, Row, Table } from '@themesberg/react-bootstrap';
 import React, { useEffect } from 'react';
@@ -17,9 +16,8 @@ export default () => {
     let dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(getCategoryThunk()) // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);  // vừa vào trang web thì thực thi hàm này.
-
+        dispatch(getCategoryThunk())  // eslint-disable-next-line
+    }, []);  // eslint-disable-next-line
     let deleteCategory = async (categoryId) => {
         await dispatch(deleteCategoryThunk(categoryId));
         dispatch(getCategoryThunk())

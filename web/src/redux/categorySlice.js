@@ -20,11 +20,8 @@ export const categorySlice = createSlice({
         }
     },
 })
-
-// Action creators are generated for each case reducer function
 export const { setData, setError } = categorySlice.actions;
-
-// Define a thunk that dispatches those action creators
+// Đinh nghĩa ra các action
 export const getCategoryThunk = () => async (dispatch) => {
 
     try {

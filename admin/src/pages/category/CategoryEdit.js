@@ -15,7 +15,9 @@ export default () => {
   let history = useHistory()
   let dispatch = useDispatch();
   let addData = async (form) => {
-    dispatch(editCategoryThunk(category._id,{title: form.title  }))
+    dispatch(editCategoryThunk(category._id, { title: form.title }))  // thực hiện action editCategoryThunk ( sửa danh mục) 
+                                                                      // và cần truyền id danh mục cần sửa và tiêu đề sửa mới
+
     addToast("Success", { appearance: 'success', autoDismiss: 1000 });
     history.push(Routes.Category.path)
   }

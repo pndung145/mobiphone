@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { dashboardCountdown, dashboardDetailCountdown, dashboardOrderByAmount, dashboardOrderByRevenue, dashboardProduct, dashboardUser, dashboardVoteUser } from '../services/dashboard.service';
+import { dashboardDetailCountdown, dashboardOrder, dashboardOrderByAmount, dashboardOrderByAmountByUser, dashboardOrderByRevenue, dashboardOrderByRevenueByUser, dashboardOrderByUser, dashboardProduct, dashboardUser, dashboardVoteUser } from '../services/dashboard.service';
 
 const initialState = {
     data: null,
@@ -45,9 +45,20 @@ export const getDashboardProductThunk = () => async (dispatch) => {
     //done
 }
 
-export const getDashboardCountdownThunk = () => async (dispatch) => {
+export const getDashboardOrderThunk = () => async (dispatch) => {
     try {
-        const data = await dashboardCountdown();
+        const data = await dashboardOrder();
+        return data;
+    } catch (err) {
+       console.log(err)
+    }
+    //done
+}
+
+
+export const getDashboardByOrderThunk = (userId) => async (dispatch) => {
+    try {
+        const data = await dashboardOrderByUser(userId);
         return data;
     } catch (err) {
        console.log(err)
@@ -78,7 +89,6 @@ export const getDashboardVoteUserThunk = () => async (dispatch) => {
 }
 
 
-
 export const getDashboardOrderByAmountThunk = (dto) => async (dispatch) => {
     try {
         const data = await dashboardOrderByAmount(dto);
@@ -101,6 +111,29 @@ export const getDashboardOrderByRenevueThunk = (dto) => async (dispatch) => {
     //done
 }
 
+
+
+export const getDashboardOrderByAmountByUserThunk = (dto) => async (dispatch) => {
+    try {
+        const data = await dashboardOrderByAmountByUser(dto);
+        return data;
+    } catch (err) {
+       console.log(err)
+    }
+    //done
+}
+
+
+
+export const getDashboardOrderByRenevueByUserThunk = (dto) => async (dispatch) => {
+    try {
+        const data = await dashboardOrderByRevenueByUser(dto);
+        return data;
+    } catch (err) {
+       console.log(err)
+    }
+    //done
+}
 
 
 export default dashboardSlice.reducer

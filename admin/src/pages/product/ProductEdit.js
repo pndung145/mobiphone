@@ -124,7 +124,7 @@ export default () => {
                         />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Tiện ích</Form.Label>
+                    <Form.Label>Khuyến mãi</Form.Label>
                         <Controller
                             control={control}
                             render={({ field: { onChange, onBlur, value } }) => (

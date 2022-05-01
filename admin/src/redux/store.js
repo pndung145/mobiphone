@@ -8,6 +8,7 @@ import progressReducer from "./progressSlice";
 import userReducer from './userSlice';
 import productReducer from './productSlice';
 import contactReducer from './contactSlice';
+import orderReducer from './orderSlice';
 //USE TOOLKIT
 const rootReducer = {
     reducer: {
@@ -19,7 +20,8 @@ const rootReducer = {
         feedback: feedbackReducer,
         category: categoryReducer,
         product: productReducer,
-        contact: contactReducer
+        contact: contactReducer,
+        order: orderReducer
     },
 };
 

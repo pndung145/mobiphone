@@ -60,6 +60,9 @@ export const Routes = {
     ProductDetail: { path: "/product/detail" },
     ProductEdit: { path: "/product/edit" },
 
-    Contact: { path: '/contact' }
+    Contact: { path: '/contact' },
+
+    Order: { path: "/order" },
+    OrderDetail: { path: "/order/detail" },
 
 };

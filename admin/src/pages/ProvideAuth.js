@@ -41,6 +41,8 @@ import Product from "./product/Product";
 import ProductAdd from "./product/ProductAdd";
 import ProductDetail from "./product/ProductDetail";
 import ProductEdit from "./product/ProductEdit";
+import Order from './order/Order';
+import OrderDetail from "./order/OrderDetail";
 import Settings from './Settings';
 import BootstrapTables from "./tables/BootstrapTables";
 import Transactions from "./Transactions";
@@ -137,6 +139,8 @@ export default function ProvideAuth() {
 
             <RouteWithSidebar exact path={Routes.Contact.path} component={Contact} />
 
+            <RouteWithSidebar exact path={Routes.Order.path} component={Order} />
+            <RouteWithSidebar exact path={Routes.OrderDetail.path} component={OrderDetail} />
 
             <Redirect from="/" to="/" />
         </Switch>

@@ -7,7 +7,7 @@ import { getOrderByIdThunk } from '../../redux/orderSlice';
 
 export default function Confirmation() {
     const location = useLocation();
-    const orderId = location.state?._id;
+    const orderId = location.state;
     const [order, setOrder] = useState();
     const dispatch = useDispatch();
     const search = async () => {
@@ -20,7 +20,7 @@ export default function Confirmation() {
     useEffect(() => {
         search() // eslint-disable-next-line 
     }, [orderId]);
-    console.log(order)
+    console.log(orderId)
     const [locationData, setLocationData] = useState();
     let searchLocation = async () => {
         let responsive = await axios.get('https://provinces.open-api.vn/api/?depth=2');

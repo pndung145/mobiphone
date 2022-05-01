@@ -27,7 +27,7 @@ export default function ProductDetail() {
                     amount: 1,
                 });
                 localStorage.setItem("cart", JSON.stringify(cart))
-                addToast("Thêm vào giỏ hàng thành công", { appearance: 'success', autoDismiss: '1000' })
+                addToast("Thêm vào giỏ hàng thành công", { appearance: 'success', autoDismiss: '500' })
 
             }
         } else {
@@ -38,7 +38,7 @@ export default function ProductDetail() {
                 amount: 1,
             });
             localStorage.setItem("cart", JSON.stringify(cartNew))
-            addToast("Thêm vào giỏ hàng thành công", { appearance: 'success', autoDismiss: '1000' })
+            addToast("Thêm vào giỏ hàng thành công", { appearance: 'success', autoDismiss: '500' })
         }
 
     }
@@ -74,7 +74,7 @@ export default function ProductDetail() {
                                     </li>
                                 </ul>
                                 <br />
-                                <h4>Tiện ích:</h4>
+                                <h4>Khuyến mãi:</h4>
                                 <div dangerouslySetInnerHTML={{ __html: product?.animate }} >
                                 </div>
                                 <div className="card_area d-flex justify-content-between align-items-center">

@@ -6,6 +6,7 @@ import { Routes } from '../../routes';
 
 export default ({ show, handleClose, code, order }) => {
   let history = useHistory();
+  console.log("orderId",order)
   return (
     <>
       <Modal show={show} onHide={handleClose} animation={false}>

@@ -1,6 +1,7 @@
 
 import { faFacebookMessenger } from "@fortawesome/free-brands-svg-icons";
 import { faStickyNote } from "@fortawesome/free-regular-svg-icons";
+import { faHandHoldingUsd } from "@fortawesome/free-solid-svg-icons";
 import { faBook, faChartPie, faMailBulk, faMobile, faSignOutAlt, faTimes, faUserAstronaut } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Badge, Button, Dropdown, Image, Nav, Navbar } from '@themesberg/react-bootstrap';
@@ -86,6 +87,7 @@ export default (props = {}) => {
               {(user.roles === "user") && <NavItem title="Phản hồi" icon={faFacebookMessenger} link={Routes.FeedbackUser.path} />}
               <NavItem title="Sản phẩm" icon={faMobile} link={Routes.Product.path} />
               <NavItem title="Liên hệ" icon={faMailBulk} link={Routes.Contact.path} />
+              <NavItem title="Order" icon={faHandHoldingUsd} link={Routes.Order.path} />
 
               <Dropdown.Divider className="my-3 border-indigo" />
 

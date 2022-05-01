@@ -58,6 +58,7 @@ export default function Checkout() {
             localStorage.removeItem('cart')
             setCode(response?.code)
             setShow(true);
+            console.log("response", response)
             setResp(response._id)
         }
     }
@@ -87,7 +88,7 @@ export default function Checkout() {
                 <div className="container">
                     <div className="billing_details">
                         <div className="row">
-                            <div className="col-lg-8">
+                            <div className="col-lg-6">
                                 <h3>Thông tin</h3>
                                 <form className="row contact_form" action="#" method="post" noValidate="novalidate">
                                     <div className="col-md-6 form-group p_star">
@@ -141,7 +142,16 @@ export default function Checkout() {
                                     </div>
 
                                     <div className="col-md-12 form-group p_star">
-                                        <input type="text" className="form-control" id="add1" name="add1" placeholder="Địa chỉ" />
+                                        <input type="text" className="form-control" id="add1" name="add1" placeholder="Địa chỉ"
+                                            value={order?.user?.address}
+                                            onChange={e => setOrder({
+                                                ...order,
+                                                user: {
+                                                    ...order.user,
+                                                    address: e.target.value
+                                                }
+                                            })}
+                                        />
                                     </div>
                                     <div className="col-md-12 form-group">
                                         <textarea className="form-control" name="message" id="message" rows={1} placeholder="Ghi chú"
@@ -268,7 +278,7 @@ function Products({ handleOrder }) {
     }, []);
     return (
         <>
-            <div className="col-lg-4">
+            <div className="col-lg-6">
                 <div className="order_box">
                     <h2>Đơn hàng của bạn</h2>
                     <ul className="list">
