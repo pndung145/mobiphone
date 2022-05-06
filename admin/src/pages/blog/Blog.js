@@ -72,17 +72,7 @@ export default () => {
 
 function BlogItem({ blog, deleteBlog, routerDetailBlog, routerEditBlog }) {
     const user = JSON.parse(localStorage.getItem("user"));
-    let checkUser = () => {
-        if (user?.roles === "superadmin" || user?.roles === "admin") {
-            return true
-        } else {
-            if (user?._id === blog?.createdBy?._id) {
-                return true
-            } else {
-                return false
-            }
-        }
-    }
+  
     return (
         <Col className='col-4' >
             <Card style={{ width: '18rem' }} className="mt-4" >
@@ -93,10 +83,8 @@ function BlogItem({ blog, deleteBlog, routerDetailBlog, routerEditBlog }) {
                     </Card.Text>
                     <Card.Subtitle className="d-flex justify-content-between mt-2" style={{ alignItems: 'center' }} >
                         <FontAwesomeIcon onClick={() => routerDetailBlog(blog)} icon={faEye} style={{ cursor: 'pointer' }} />
-                        {checkUser() && <>
-                            <FontAwesomeIcon onClick={() => routerEditBlog(blog)} icon={faEdit} style={{ cursor: 'pointer' }} />
+                        <FontAwesomeIcon onClick={() => routerEditBlog(blog)} icon={faEdit} style={{ cursor: 'pointer' }} />
                             <FontAwesomeIcon onClick={() => deleteBlog(blog._id)} icon={faTrashAlt} style={{ cursor: 'pointer' }} />
-                        </>}
                     </Card.Subtitle>
 
                 </Card.Body>

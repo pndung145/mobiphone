@@ -16,7 +16,7 @@ import { ContactModule } from './contact/contact.module';
 
 @Module({
   imports: [UserModule,
-    MongooseModule.forRoot('mongodb://localhost/mobilephone'),
+    MongooseModule.forRoot('mongodb+srv://Pndung145:anhdung145@cluster0.af0uc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'),
     AuthModule,
     BlogModule,
     CommentModule,

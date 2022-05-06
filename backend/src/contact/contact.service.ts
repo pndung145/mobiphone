@@ -30,12 +30,12 @@ export class ContactService {
     const transport = nodemailer.createTransport({
       service: "Gmail",
       auth: {
-        user: 'zenominhhoang@gmail.com',
-        pass: 'Dalecarnegie521985',
+        user: 'noreplydung145@gmail.com',
+        pass: 'anhdung145',
       }
     })
     transport.sendMail({
-      from: 'zenominhhoang@gmail.com',
+      from: 'noreplydung145@gmail.com',
       to: email,
       subject: "Đăng ký nhận tin",
       html: `<h1>Liên hệ</h1>

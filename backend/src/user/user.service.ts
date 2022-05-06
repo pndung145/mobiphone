@@ -49,12 +49,12 @@ export class UserService {
         const transport = nodemailer.createTransport({
             service: "Gmail",
             auth: {
-                user: 'zenominhhoang@gmail.com',
-                pass: 'Dalecarnegie521985',
+                user: 'noreplydung145@gmail.com',
+                pass: 'anhdung145',
             }
         })
         transport.sendMail({
-            from: 'zenominhhoang@gmail.com',
+            from: 'noreplydung145@gmail.com',
             to: email,
             subject: "Vui lòng xác nhận tài khoản của bạn",
             html: `<h1>Email xác nhận</h1>
@@ -114,12 +114,12 @@ export class UserService {
         const transport = nodemailer.createTransport({
             service: "Gmail",
             auth: {
-                user: 'zenominhhoang@gmail.com',
-                pass: 'Dalecarnegie521985',
+                user: 'noreplydung145@gmail.com',
+                pass: 'anhdung145',
             }
         })
         transport.sendMail({
-            from: 'zenominhhoang@gmail.com',
+            from: 'noreplydung145@gmail.com',
             to: email,
             subject: "Quên mật khẩu",
             html: `<h1>Xác nhận mật khẩu mới</h1>
