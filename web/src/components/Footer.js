@@ -1,5 +1,5 @@
 
-import { Card, Col, Row } from '@themesberg/react-bootstrap';
+import { Col, Row } from '@themesberg/react-bootstrap';
 import moment from "moment-timezone";
 import React from "react";
 
@@ -15,9 +15,9 @@ export default (props) => {
           <Col xs={12} lg={6} className="mb-4 mb-lg-0">
             <p className="mb-0 text-center text-xl-left">
               Copyright © 2021-{`${currentYear} `}
-              <Card.Link href="https://www.facebook.com/CLBTaekwondoNEU" target="_blank" className="text-blue text-decoration-none fw-normal">
+              {/* <Card.Link href="https://www.facebook.com/CLBTaekwondoNEU" target="_blank" className="text-blue text-decoration-none fw-normal">
                 KF/KFes
-              </Card.Link>
+              </Card.Link> */}
             </p>
           </Col>
         </Row>

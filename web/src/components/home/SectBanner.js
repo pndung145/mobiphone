@@ -14,10 +14,11 @@ export default function SectBanner() {
                                     <div className="col-lg-5 col-md-8">
                                         <div className="banner_text">
                                             <div className="banner_text_iner">
-                                                <h1>Mobiphone</h1>
-                                                <p>Incididunt ut labore et dolore magna aliqua quis ipsum
-                                                    suspendisse ultrices gravida. Risus commodo viverra</p>
-                                                <Link to="/product" className="btn_2">buy now</Link>
+                                                <h1>Apple</h1>
+                                                <p>Sản phẩm mới nhất năm 2022 giá
+                                                    chỉ từ 11 triệu
+                                                </p>
+                                                <Link to="/product" className="btn_2">Mua ngay</Link>
                                             </div>
                                         </div>
                                     </div>

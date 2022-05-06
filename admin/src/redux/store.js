@@ -23,6 +23,10 @@ const rootReducer = {
         contact: contactReducer,
         order: orderReducer
     },
+    
 };
 
-export const store = configureStore(rootReducer);
+export const store = configureStore({
+    reducer: rootReducer,
+    // middleware
+});

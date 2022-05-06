@@ -29,8 +29,9 @@ export default function Offer() {
                     </div>
                     <div className="col-lg-6 col-md-6">
                         <div className="offer_text">
-                            <h2>Weekly Sale on
-                                60% Off All Products</h2>
+                            <h3>Đăng ký email để nhận được thông báo
+                                ưu đãi về giá các sản phẩm
+                            </h3>
                             <div className="date_countdown">
                                 <div id="timer">
                                     <div id="days" className="date"></div>
@@ -46,7 +47,7 @@ export default function Offer() {
                                     render={({
                                         field: { onChange, onBlur, value }
                                     }) => (
-                                        <input type="text" className="form-control" placeholder="enter email address"
+                                        <input type="text" className="form-control" placeholder="Email"
                                             aria-label="Recipient's username" aria-describedby="basic-addon2"
                                             onBlur={onBlur}
                                             onChange={e => onChange(e.target.value)}
